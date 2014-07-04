@@ -32,7 +32,8 @@ namespace WPMobileNet.Service
                     if (_geolocator == null)
                     {
                         _geolocator = new Geolocator();
-                        //_geolocator.DesiredAccuracyInMeters = DesiredAccuracyInMeters;
+                        _geolocator.DesiredAccuracy = PositionAccuracy.High;
+                        _geolocator.DesiredAccuracyInMeters = 1;
                         //_geolocator.MovementThreshold = GeoLocatorMovementThreshold;
                         //_geolocator.PositionChanged += _geolocator_PositionChanged;
                     }

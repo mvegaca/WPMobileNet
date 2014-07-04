@@ -188,4 +188,79 @@
   <data name="VHomeProgressIndicatorText" xml:space="preserve">
     <value>Getting status</value>
   </data>
+  <data name="StatusDeviceLocation" xml:space="preserve">
+    <value>Device Location</value>
+  </data>
+  <data name="StatusDeviceLocationDescription" xml:space="preserve">
+    <value>Device Location information from GPS sensor.</value>
+  </data>
+  <data name="StatusAccuracy" xml:space="preserve">
+    <value>Accuracy</value>
+  </data>
+  <data name="StatusAltitude" xml:space="preserve">
+    <value>Altitude</value>
+  </data>
+  <data name="StatusAltitudeAccuracy" xml:space="preserve">
+    <value>Altitude Accuracy</value>
+  </data>
+  <data name="StatusCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="StatusCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="StatusHeading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="StatusHorizontalDilutionOfPrecision" xml:space="preserve">
+    <value>Horizontal Dilution Of Precision</value>
+  </data>
+  <data name="StatusInterfaceName" xml:space="preserve">
+    <value>Interface Name</value>
+  </data>
+  <data name="StatusInterfaceState" xml:space="preserve">
+    <value>Interface State</value>
+  </data>
+  <data name="StatusInterfaceSubtype" xml:space="preserve">
+    <value>Interface Subtype</value>
+  </data>
+  <data name="StatusInterfaceType" xml:space="preserve">
+    <value>Interface Type</value>
+  </data>
+  <data name="StatusLatitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="StatusLongitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="StatusMobileDataTechnology" xml:space="preserve">
+    <value>Mobile Data Technology</value>
+  </data>
+  <data name="StatusPositionDilutionOfPrecision" xml:space="preserve">
+    <value>Position Dilution Of Precision</value>
+  </data>
+  <data name="StatusPositionSource" xml:space="preserve">
+    <value>Position Source</value>
+  </data>
+  <data name="StatusPostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="StatusSpeed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="StatusState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="StatusVerticalDilutionOfPrecision" xml:space="preserve">
+    <value>Vertical Dilution Of Precision</value>
+  </data>
+  <data name="StatusDeviceID" xml:space="preserve">
+    <value>Device ID</value>
+  </data>
+  <data name="StatusPublisherHostId" xml:space="preserve">
+    <value>Publisher Host Id</value>
+  </data>
+  <data name="StatusIsPowerSavingModeEnabled" xml:space="preserve">
+    <value>Is power saving mode enabled</value>
+  </data>
 </root>

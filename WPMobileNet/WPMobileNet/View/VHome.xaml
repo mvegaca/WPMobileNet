@@ -38,6 +38,10 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.DeviceName}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceID, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.DeviceID}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPublisherHostId, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.PublisherHostId}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceManufacturer, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.DeviceManufacturer}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceHardwareVersion, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
@@ -48,6 +52,8 @@
                             <TextBlock Text="{Binding Status.Model.IsPluggedIn}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusRemainingChargePercent, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.RemainingChargePercent}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusIsPowerSavingModeEnabled, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.IsPowerSavingModeEnabled}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                         </StackPanel>
                     </StackPanel>
                 </phone:PivotItem>
@@ -57,12 +63,17 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusMobileOperator, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusMobileOperatorDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.NetWorkOperator}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusMobileDataTechnology, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.MobileDataTechnology}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusInterfaceState, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.InterfaceState}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusInterfaceName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.InterfaceName}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusInterfaceType, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.InterfaceType}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusInterfaceSubtype, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.InterfaceSubtype}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPing, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0,24,0,0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPing, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0,24,0,0"/>                            
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPingDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.PingMilliseconds}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                         </StackPanel>
@@ -75,6 +86,38 @@
                 <phone:PivotItem Margin="0" Header="{Binding Path=LocalizedResources.VHomePivotItemHeader2, Source={StaticResource LocalizedStrings}}">
                     <ScrollViewer>
                         <StackPanel Margin="24,0,24,0">
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocation, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocationDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>                            
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitudeAccuracy, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.AltitudeAccuracy}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Altitude}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusLatitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Latitude}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusLongitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Longitude}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusSpeed, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Speed}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionSource, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.PositionSource}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusHorizontalDilutionOfPrecision, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.HorizontalDilutionOfPrecision}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusVerticalDilutionOfPrecision, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.VerticalDilutionOfPrecision}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionDilutionOfPrecision, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.PositionDilutionOfPrecision}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusHeading, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Heading}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAccuracy, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Accuracy}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusCountry, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.Country}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusState, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.State}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusCity, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.City}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPostalCode, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.PostalCode}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>

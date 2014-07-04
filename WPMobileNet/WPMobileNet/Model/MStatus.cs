@@ -164,6 +164,7 @@ namespace WPMobileNet.Model
             get { return _speed; }
             set { Set("Speed", ref _speed, value); }
         }
+        
         private string _positionSource;
         [DataMember]
         public string PositionSource
@@ -194,6 +195,55 @@ namespace WPMobileNet.Model
         {
             get { return _verticalDilutionOfPrecision; }
             set { Set("VerticalDilutionOfPrecision", ref _verticalDilutionOfPrecision, value); }
+        }
+        private double? _heading;
+        [DataMember]
+        public double? Heading
+        {
+            get { return _heading; }
+            set { Set("Heading", ref _heading, value); }
+        }
+        private double? _accuracy;
+        [DataMember]
+        public double? Accuracy
+        {
+            get { return _accuracy; }
+            set { Set("Accuracy", ref _accuracy, value); }
+        }
+        private double? _altitudeAccuracy;
+        [DataMember]
+        public double? AltitudeAccuracy
+        {
+            get { return _altitudeAccuracy; }
+            set { Set("AltitudeAccuracy", ref _altitudeAccuracy, value); }
+        }
+        private string _city;
+        [DataMember]
+        public string City
+        {
+            get { return _city; }
+            set { Set("City", ref _city, value); }
+        }
+        private string _state;
+        [DataMember]
+        public string State
+        {
+            get { return _state; }
+            set { Set("State", ref _state, value); }
+        }
+        private string _country;
+        [DataMember]
+        public string Country
+        {
+            get { return _country; }
+            set { Set("Country", ref _country, value); }
+        }
+        private string _postalCode;
+        [DataMember]
+        public string PostalCode
+        {
+            get { return _postalCode; }
+            set { Set("PostalCode", ref _postalCode, value); }
         }
         private bool? _isDeviceMoving;
         [DataMember]
@@ -242,6 +292,20 @@ namespace WPMobileNet.Model
             get { return _deviceFirmwareVersion; }
             set { Set("DeviceFirmwareVersion", ref _deviceFirmwareVersion, value); }
         }
+        private string _deviceID;
+        [DataMember]
+        public string DeviceID
+        {
+            get { return _deviceID; }
+            set { Set("DeviceID", ref _deviceID, value); }
+        }
+        private string _publisherHostId;
+        [DataMember]
+        public string PublisherHostId
+        {
+            get { return _publisherHostId; }
+            set { Set("PublisherHostId", ref _publisherHostId, value); }
+        }
         private long _deviceTotalMemory;
         [DataMember]
         public long DeviceTotalMemory
@@ -255,6 +319,13 @@ namespace WPMobileNet.Model
         {
             get { return _isPluggedIn; }
             set { Set("IsPluggedIn", ref _isPluggedIn, value); }
+        }
+        private bool _isPowerSavingModeEnabled;
+        [DataMember]
+        public bool IsPowerSavingModeEnabled
+        {
+            get { return _isPowerSavingModeEnabled; }
+            set { Set("IsPowerSavingModeEnabled", ref _isPowerSavingModeEnabled, value); }
         }
         private int _remainingChargePercent;
         [DataMember]

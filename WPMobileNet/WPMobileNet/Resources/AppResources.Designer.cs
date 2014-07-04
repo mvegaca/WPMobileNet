@@ -106,6 +106,51 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accuracy.
+        /// </summary>
+        public static string StatusAccuracy {
+            get {
+                return ResourceManager.GetString("StatusAccuracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Altitude.
+        /// </summary>
+        public static string StatusAltitude {
+            get {
+                return ResourceManager.GetString("StatusAltitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Altitude Accuracy.
+        /// </summary>
+        public static string StatusAltitudeAccuracy {
+            get {
+                return ResourceManager.GetString("StatusAltitudeAccuracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string StatusCity {
+            get {
+                return ResourceManager.GetString("StatusCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string StatusCountry {
+            get {
+                return ResourceManager.GetString("StatusCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Device.
         /// </summary>
         public static string StatusDevice {
@@ -142,6 +187,33 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Device ID.
+        /// </summary>
+        public static string StatusDeviceID {
+            get {
+                return ResourceManager.GetString("StatusDeviceID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device Location.
+        /// </summary>
+        public static string StatusDeviceLocation {
+            get {
+                return ResourceManager.GetString("StatusDeviceLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device Location information from GPS sensor..
+        /// </summary>
+        public static string StatusDeviceLocationDescription {
+            get {
+                return ResourceManager.GetString("StatusDeviceLocationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manufacturer.
         /// </summary>
         public static string StatusDeviceManufacturer {
@@ -160,11 +232,101 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Heading.
+        /// </summary>
+        public static string StatusHeading {
+            get {
+                return ResourceManager.GetString("StatusHeading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horizontal Dilution Of Precision.
+        /// </summary>
+        public static string StatusHorizontalDilutionOfPrecision {
+            get {
+                return ResourceManager.GetString("StatusHorizontalDilutionOfPrecision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interface Name.
+        /// </summary>
+        public static string StatusInterfaceName {
+            get {
+                return ResourceManager.GetString("StatusInterfaceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interface State.
+        /// </summary>
+        public static string StatusInterfaceState {
+            get {
+                return ResourceManager.GetString("StatusInterfaceState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interface Subtype.
+        /// </summary>
+        public static string StatusInterfaceSubtype {
+            get {
+                return ResourceManager.GetString("StatusInterfaceSubtype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interface Type.
+        /// </summary>
+        public static string StatusInterfaceType {
+            get {
+                return ResourceManager.GetString("StatusInterfaceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is plugged in.
         /// </summary>
         public static string StatusIsPluggedIn {
             get {
                 return ResourceManager.GetString("StatusIsPluggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is power saving mode enabled.
+        /// </summary>
+        public static string StatusIsPowerSavingModeEnabled {
+            get {
+                return ResourceManager.GetString("StatusIsPowerSavingModeEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude.
+        /// </summary>
+        public static string StatusLatitude {
+            get {
+                return ResourceManager.GetString("StatusLatitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude.
+        /// </summary>
+        public static string StatusLongitude {
+            get {
+                return ResourceManager.GetString("StatusLongitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile Data Technology.
+        /// </summary>
+        public static string StatusMobileDataTechnology {
+            get {
+                return ResourceManager.GetString("StatusMobileDataTechnology", resourceCulture);
             }
         }
         
@@ -205,11 +367,74 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Position Dilution Of Precision.
+        /// </summary>
+        public static string StatusPositionDilutionOfPrecision {
+            get {
+                return ResourceManager.GetString("StatusPositionDilutionOfPrecision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position Source.
+        /// </summary>
+        public static string StatusPositionSource {
+            get {
+                return ResourceManager.GetString("StatusPositionSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal Code.
+        /// </summary>
+        public static string StatusPostalCode {
+            get {
+                return ResourceManager.GetString("StatusPostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publisher Host Id.
+        /// </summary>
+        public static string StatusPublisherHostId {
+            get {
+                return ResourceManager.GetString("StatusPublisherHostId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remaining charge percent.
         /// </summary>
         public static string StatusRemainingChargePercent {
             get {
                 return ResourceManager.GetString("StatusRemainingChargePercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speed.
+        /// </summary>
+        public static string StatusSpeed {
+            get {
+                return ResourceManager.GetString("StatusSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string StatusState {
+            get {
+                return ResourceManager.GetString("StatusState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical Dilution Of Precision.
+        /// </summary>
+        public static string StatusVerticalDilutionOfPrecision {
+            get {
+                return ResourceManager.GetString("StatusVerticalDilutionOfPrecision", resourceCulture);
             }
         }
         
