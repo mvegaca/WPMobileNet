@@ -34,14 +34,15 @@ namespace WPMobileNet.Service
                         _geolocator = new Geolocator();
                         _geolocator.DesiredAccuracy = PositionAccuracy.High;
                         _geolocator.DesiredAccuracyInMeters = 1;
-                        //_geolocator.MovementThreshold = GeoLocatorMovementThreshold;
-                        //_geolocator.PositionChanged += _geolocator_PositionChanged;
+                        _geolocator.MovementThreshold = 1;
+                        _geolocator.PositionChanged += _geolocatorPositionChanged;
                     }
                 }
                 else throw new UnauthorizedAccessException();
                 return _geolocator;
             }
         }
+
         private Geoposition _currentLocation;
         public Geoposition CurrentLocation
         {
@@ -63,6 +64,15 @@ namespace WPMobileNet.Service
                 }
                 return _hasPermission;
             }
+        }
+        #endregion
+
+        #region Events        
+        public event EventHandler<Geoposition> PositionChanged;
+
+        private void _geolocatorPositionChanged(Windows.Devices.Geolocation.Geolocator sender, PositionChangedEventArgs args)
+        {
+            if (PositionChanged != null) PositionChanged(this.Geolocator, args.Position);
         }
         #endregion
 

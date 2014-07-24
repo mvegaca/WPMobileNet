@@ -111,6 +111,7 @@
     <Compile Include="Service\NetworkStatusService.cs" />
     <Compile Include="Service\PingService.cs" />
     <Compile Include="Service\StateService.cs" />
+    <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="ViewModel\SimpleViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\VMBase.cs" />

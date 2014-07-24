@@ -313,6 +313,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LocationOrigin.
+        /// </summary>
+        public static string StatusLocationOrigin {
+            get {
+                return ResourceManager.GetString("StatusLocationOrigin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Longitude.
         /// </summary>
         public static string StatusLongitude {

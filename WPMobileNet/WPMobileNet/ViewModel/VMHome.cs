@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
+using Windows.Devices.Geolocation;
 using WPMobileNet.Service;
+using WPMobileNet.Utils;
 
 namespace WPMobileNet.ViewModel
 {
@@ -29,7 +33,7 @@ namespace WPMobileNet.ViewModel
         {
             get { return _status; }
             set { Set("Status", ref _status, value); }
-        }
+        }        
         #endregion
 
         #region Constructors
@@ -41,6 +45,20 @@ namespace WPMobileNet.ViewModel
             this._deviceService = deviceService;
             this._locationService = locationService;
             this.Status = new VMStatus();
+            this._locationService.PositionChanged += _locationService_PositionChanged;
+        }
+
+        private void _locationService_PositionChanged(object sender, Geoposition geoposition)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                var speed = geoposition.Coordinate.Speed;
+                if (this.Status.Model.Speed != speed)
+                {                    
+                    this.Status.Model.Speed = speed;
+                }
+                this.Status.Model.LocationOrigin = EnumHelper.LocationOrigin.PositionChangeEvent;
+            });
         }
         #endregion
 
@@ -56,13 +74,13 @@ namespace WPMobileNet.ViewModel
         }
         private void ExecuteGetStatusCommand()
         {
-            GetData();
+            GetData(EnumHelper.LocationOrigin.GetGeopositionAsync);
         }
         #endregion
         #endregion
 
         #region Methods
-        private async void GetData()
+        private async void GetData(EnumHelper.LocationOrigin locationOrigin)
         {
             try
             {
@@ -87,7 +105,12 @@ namespace WPMobileNet.ViewModel
                 await this._locationService.GetCurrentLocation();
                 this.Status.Model.Latitude = this._locationService.CurrentLocation.Coordinate.Latitude;
                 this.Status.Model.Longitude = this._locationService.CurrentLocation.Coordinate.Longitude;
-                this.Status.Model.Speed = this._locationService.CurrentLocation.Coordinate.Speed;
+                var speed = this._locationService.CurrentLocation.Coordinate.Speed;
+                if (this.Status.Model.Speed != speed)
+                {                    
+                    this.Status.Model.Speed = speed;
+                }
+                this.Status.Model.LocationOrigin = locationOrigin;
                 this.Status.Model.PositionSource = this._locationService.CurrentLocation.Coordinate.PositionSource.ToString();
                 this.Status.Model.HorizontalDilutionOfPrecision = this._locationService.CurrentLocation.Coordinate.SatelliteData.HorizontalDilutionOfPrecision;
                 this.Status.Model.VerticalDilutionOfPrecision = this._locationService.CurrentLocation.Coordinate.SatelliteData.VerticalDilutionOfPrecision;

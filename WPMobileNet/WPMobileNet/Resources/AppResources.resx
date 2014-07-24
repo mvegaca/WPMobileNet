@@ -263,4 +263,7 @@
   <data name="StatusIsPowerSavingModeEnabled" xml:space="preserve">
     <value>Is power saving mode enabled</value>
   </data>
+  <data name="StatusLocationOrigin" xml:space="preserve">
+    <value>LocationOrigin</value>
+  </data>
 </root>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using WPMobileNet.Utils;
 using WPMobileNet.ViewModel;
 
 namespace WPMobileNet.Model
@@ -163,6 +164,14 @@ namespace WPMobileNet.Model
         {
             get { return _speed; }
             set { Set("Speed", ref _speed, value); }
+        }
+
+        private EnumHelper.LocationOrigin _locationOrigin;
+        [DataMember]
+        public EnumHelper.LocationOrigin LocationOrigin
+        {
+            get { return _locationOrigin; }
+            set { Set("LocationOrigin", ref _locationOrigin, value); }
         }
         
         private string _positionSource;

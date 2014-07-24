@@ -42,12 +42,6 @@ namespace WPMobileNet.Service
             foreach (var format in Windows.Phone.Media.Capture.AudioVideoCaptureDevice.AvailableSensorLocations) formats += format + ";";
             return formats;
         }
-        internal string GetAvailableSensorLocations()
-        {
-            string formats = string.Empty;
-            foreach (var format in Windows.Phone.Media.Capture.AudioVideoCaptureDevice.AvailableSensorLocations) formats += format + ";";
-            return formats;
-        }
         internal string GetInstallationPackages()
         {
             string formats = string.Empty;
@@ -55,7 +49,7 @@ namespace WPMobileNet.Service
             return formats;
         }
         internal float GetDeviceDisplayDpi() { return Windows.Graphics.Display.DisplayProperties.LogicalDpi; }
-        internal string GetDeviceDisplayDpi() { return Windows.Graphics.Display.DisplayProperties.ResolutionScale.ToString(); }
+        internal string GetDeviceResolutionScale() { return Windows.Graphics.Display.DisplayProperties.ResolutionScale.ToString(); }
         internal bool IsDeviceStereoEnabled() { return Windows.Graphics.Display.DisplayProperties.StereoEnabled; }
         internal string GetDisplayCurrentOrientation() { return Windows.Graphics.Display.DisplayProperties.CurrentOrientation.ToString(); }       
 

@@ -25,9 +25,13 @@
     </ia:Interaction.Triggers>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent">        
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="0" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <phone:Pivot
                 Margin="0"                         
                 Title="{Binding Path=LocalizedResources.VHomePivotTitle, Source={StaticResource LocalizedStrings}}">
@@ -76,11 +80,7 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPing, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0,24,0,0"/>                            
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPingDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.PingMilliseconds}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                        </StackPanel>
-                        <Button
-                                Content="{Binding Path=LocalizedResources.VHomeButtonUpdateStatus, Source={StaticResource LocalizedStrings}}"
-                                Margin="-12,0,-12,0"
-                                Command="{Binding GetStatusCommand}"/>
+                        </StackPanel>                        
                     </StackPanel>
                 </phone:PivotItem>
                 <phone:PivotItem Margin="0" Header="{Binding Path=LocalizedResources.VHomePivotItemHeader2, Source={StaticResource LocalizedStrings}}">
@@ -98,6 +98,8 @@
                             <TextBlock Text="{Binding Status.Model.Longitude}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusSpeed, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.Speed}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusLocationOrigin, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.LocationOrigin}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionSource, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.PositionSource}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusHorizontalDilutionOfPrecision, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
@@ -122,6 +124,11 @@
                     </ScrollViewer>
                 </phone:PivotItem>
             </phone:Pivot>
+            <Button
+                Grid.Row="1"
+                Content="{Binding Path=LocalizedResources.VHomeButtonUpdateStatus, Source={StaticResource LocalizedStrings}}"
+                Margin="12,0,12,0"
+                Command="{Binding GetStatusCommand}"/>
         </Grid>
     </Grid>
 </phone:PhoneApplicationPage>
