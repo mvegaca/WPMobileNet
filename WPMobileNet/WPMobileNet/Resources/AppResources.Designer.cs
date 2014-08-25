@@ -106,6 +106,33 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acceleration X.
+        /// </summary>
+        public static string StatusAccelerationX {
+            get {
+                return ResourceManager.GetString("StatusAccelerationX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acceleration Y.
+        /// </summary>
+        public static string StatusAccelerationY {
+            get {
+                return ResourceManager.GetString("StatusAccelerationY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acceleration Z.
+        /// </summary>
+        public static string StatusAccelerationZ {
+            get {
+                return ResourceManager.GetString("StatusAccelerationZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accuracy.
         /// </summary>
         public static string StatusAccuracy {
@@ -480,6 +507,15 @@ namespace WPMobileNet.Resources {
         public static string VHomePivotItemHeader2 {
             get {
                 return ResourceManager.GetString("VHomePivotItemHeader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accelerometer.
+        /// </summary>
+        public static string VHomePivotItemHeader3 {
+            get {
+                return ResourceManager.GetString("VHomePivotItemHeader3", resourceCulture);
             }
         }
         

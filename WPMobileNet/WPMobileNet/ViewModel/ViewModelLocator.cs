@@ -47,6 +47,7 @@ namespace WPMobileNet.ViewModel
             SimpleIoc.Default.Register<MessageBoxService>();
             SimpleIoc.Default.Register<StateService>();
             SimpleIoc.Default.Register<LocationService>();
+            SimpleIoc.Default.Register<AccelerometerService>();
             SimpleIoc.Default.Register<NavigationService>(() => new NavigationService(App.RootFrame)
             {
                 RoutingTable = new Dictionary<string, object>()

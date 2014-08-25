@@ -266,4 +266,16 @@
   <data name="StatusLocationOrigin" xml:space="preserve">
     <value>LocationOrigin</value>
   </data>
+  <data name="VHomePivotItemHeader3" xml:space="preserve">
+    <value>Accelerometer</value>
+  </data>
+  <data name="StatusAccelerationX" xml:space="preserve">
+    <value>Acceleration X</value>
+  </data>
+  <data name="StatusAccelerationY" xml:space="preserve">
+    <value>Acceleration Y</value>
+  </data>
+  <data name="StatusAccelerationZ" xml:space="preserve">
+    <value>Acceleration Z</value>
+  </data>
 </root>

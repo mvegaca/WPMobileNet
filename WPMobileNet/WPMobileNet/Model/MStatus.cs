@@ -344,6 +344,17 @@ namespace WPMobileNet.Model
             set { Set("RemainingChargePercent", ref _remainingChargePercent, value); }
         }
         #endregion
+        #region Accelerometer
+        private double _accelerationX;
+        [DataMember]
+        public double AccelerationX { get { return _accelerationX; } set { Set("AccelerationX", ref _accelerationX, value); } }
+        private double _accelerationY;
+        [DataMember]
+        public double AccelerationY { get { return _accelerationY; } set { Set("AccelerationY", ref _accelerationY, value); } }
+        private double _accelerationZ;
+        [DataMember]
+        public double AccelerationZ { get { return _accelerationZ; } set { Set("AccelerationZ", ref _accelerationZ, value); } }
+        #endregion
         #endregion
 
         #region Constructors

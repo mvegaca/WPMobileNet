@@ -123,6 +123,33 @@
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>
+                <phone:PivotItem Margin="0" Header="{Binding Path=LocalizedResources.VHomePivotItemHeader3, Source={StaticResource LocalizedStrings}}">
+                    <ScrollViewer>
+                        <StackPanel Margin="24,0,24,0">
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationX, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.AccelerationX}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationY, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.AccelerationY}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationZ, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.AccelerationZ}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>                            
+                            <Canvas HorizontalAlignment="Left" Width="{Binding AccelerometerControlCanvasWidth}" Height="{Binding AccelerometerControlCanvasHeight}" Background="White" Margin="0,12,0,0">
+                                <Line
+                                    Stroke="{StaticResource PhoneContrastForegroundBrush}"
+                                    X1="0"
+                                    Y1="{Binding AccelerometerControlCanvasHalfHeight}"
+                                    X2="{Binding AccelerometerControlCanvasWidth}"
+                                    Y2="{Binding AccelerometerControlCanvasHalfHeight}"/>
+                                <Line
+                                    Stroke="{StaticResource PhoneContrastForegroundBrush}"
+                                    X1="{Binding AccelerometerControlCanvasHalfWidth}"
+                                    Y1="0"                                    
+                                    X2="{Binding AccelerometerControlCanvasHalfWidth}"
+                                    Y2="{Binding AccelerometerControlCanvasHeight}"/>
+                                <Ellipse Width="50" Height="50" Stroke="{StaticResource PhoneAccentBrush}" Fill="Transparent" StrokeThickness="10" Canvas.Top="{Binding AccelerometerControlEllipseTop}" Canvas.Left="{Binding AccelerometerControlEllipseLeft}"/>
+                            </Canvas>
+                        </StackPanel>
+                    </ScrollViewer>
+                </phone:PivotItem>
             </phone:Pivot>
             <Button
                 Grid.Row="1"

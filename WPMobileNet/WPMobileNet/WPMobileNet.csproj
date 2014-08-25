@@ -103,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service\AccelerometerService.cs" />
     <Compile Include="Service\BaseService.cs" />
     <Compile Include="Service\DeviceService.cs" />
     <Compile Include="Service\LocationService.cs" />
