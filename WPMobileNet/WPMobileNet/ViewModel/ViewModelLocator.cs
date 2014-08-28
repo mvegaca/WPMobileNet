@@ -52,11 +52,14 @@ namespace WPMobileNet.ViewModel
             {
                 RoutingTable = new Dictionary<string, object>()
                 {
-                    {"VHome", new Uri("/View/VHome.xaml", UriKind.Relative)}
+                    {"VHome", new Uri("/View/VHome.xaml", UriKind.Relative)},
+                    {"VAccelerometer", new Uri("/View/VAccelerometer.xaml", UriKind.Relative)},
+                    {"VPedometer", new Uri("/View/VPedometer.xaml", UriKind.Relative)}
                 }
             });
             //ViewModels
             SimpleIoc.Default.Register<VMHome>();
+            SimpleIoc.Default.Register<VMAccelerometer>();            
         }
 
         /// <summary>
@@ -70,6 +73,20 @@ namespace WPMobileNet.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<VMHome>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public VMAccelerometer Accelerometer
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VMAccelerometer>();
             }
         }
 

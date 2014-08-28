@@ -267,7 +267,7 @@
     <value>LocationOrigin</value>
   </data>
   <data name="VHomePivotItemHeader3" xml:space="preserve">
-    <value>Accelerometer</value>
+    <value>Sensors</value>
   </data>
   <data name="StatusAccelerationX" xml:space="preserve">
     <value>Acceleration X</value>
@@ -277,5 +277,26 @@
   </data>
   <data name="StatusAccelerationZ" xml:space="preserve">
     <value>Acceleration Z</value>
+  </data>
+  <data name="VHomeSensorsItemHeader1" xml:space="preserve">
+    <value>Accelerometer</value>
+  </data>
+  <data name="VHomeSensorsItemLabel1" xml:space="preserve">
+    <value>Get X, Y, and Z axis accelerations.</value>
+  </data>
+  <data name="VHomeSensorsItemHeader2" xml:space="preserve">
+    <value>Pedometer</value>
+  </data>
+  <data name="VHomeSensorsItemLabel2" xml:space="preserve">
+    <value>Steep counter.</value>
+  </data>
+  <data name="VAccelerometerDescription" xml:space="preserve">
+    <value>Accelerometer sensor measure X, Y, and Z axis accelerations in m/s2.</value>
+  </data>
+  <data name="StatusPedometerStatus" xml:space="preserve">
+    <value>Pedometer status</value>
+  </data>
+  <data name="StatusSteeps" xml:space="preserve">
+    <value>Steeps</value>
   </data>
 </root>

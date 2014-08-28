@@ -115,11 +115,18 @@
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="ViewModel\SimpleViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\VMAccelerometer.cs" />
     <Compile Include="ViewModel\VMBase.cs" />
     <Compile Include="ViewModel\VMHome.cs" />
     <Compile Include="ViewModel\VMStatus.cs" />
+    <Compile Include="View\VAccelerometer.xaml.cs">
+      <DependentUpon>VAccelerometer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\VHome.xaml.cs">
       <DependentUpon>VHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPedometer.xaml.cs">
+      <DependentUpon>VPedometer.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +134,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="View\VAccelerometer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\VHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VPedometer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +174,12 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -172,6 +193,9 @@
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.WP8">
       <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>

@@ -385,6 +385,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pedometer status.
+        /// </summary>
+        public static string StatusPedometerStatus {
+            get {
+                return ResourceManager.GetString("StatusPedometerStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ping.
         /// </summary>
         public static string StatusPing {
@@ -466,11 +475,29 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Steeps.
+        /// </summary>
+        public static string StatusSteeps {
+            get {
+                return ResourceManager.GetString("StatusSteeps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vertical Dilution Of Precision.
         /// </summary>
         public static string StatusVerticalDilutionOfPrecision {
             get {
                 return ResourceManager.GetString("StatusVerticalDilutionOfPrecision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accelerometer sensor measure X, Y, and Z axis accelerations in m/s2..
+        /// </summary>
+        public static string VAccelerometerDescription {
+            get {
+                return ResourceManager.GetString("VAccelerometerDescription", resourceCulture);
             }
         }
         
@@ -511,7 +538,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accelerometer.
+        ///   Looks up a localized string similar to Sensors.
         /// </summary>
         public static string VHomePivotItemHeader3 {
             get {
@@ -534,6 +561,42 @@ namespace WPMobileNet.Resources {
         public static string VHomeProgressIndicatorText {
             get {
                 return ResourceManager.GetString("VHomeProgressIndicatorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accelerometer.
+        /// </summary>
+        public static string VHomeSensorsItemHeader1 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pedometer.
+        /// </summary>
+        public static string VHomeSensorsItemHeader2 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get X, Y, and Z axis accelerations..
+        /// </summary>
+        public static string VHomeSensorsItemLabel1 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steep counter..
+        /// </summary>
+        public static string VHomeSensorsItemLabel2 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel2", resourceCulture);
             }
         }
     }

@@ -23,7 +23,6 @@ namespace WPMobileNet.ViewModel
         private readonly NetworkStatusService _networkStatusService;
         private readonly DeviceService _deviceService;
         private readonly LocationService _locationService;
-        private readonly AccelerometerService _accelerometerService;
         #endregion
 
         #region Properties
@@ -32,44 +31,19 @@ namespace WPMobileNet.ViewModel
         {
             get { return _isProgressIndicatorVisible; }
             set { Set("IsProgressIndicatorVisible", ref _isProgressIndicatorVisible, value); }
-        }
-        private VMStatus _status;
-        public VMStatus Status
-        {
-            get { return _status; }
-            set { Set("Status", ref _status, value); }
-        }
-        #region AccelerometerControl
-        private double _accelerometerControlCanvasWidth;
-        public double AccelerometerControlCanvasWidth { get { return _accelerometerControlCanvasWidth; } set { Set("AccelerometerControlCanvasWidth", ref _accelerometerControlCanvasWidth, value); } }
-        private double _accelerometerControlCanvasHeight;
-        public double AccelerometerControlCanvasHeight { get { return _accelerometerControlCanvasHeight; } set { Set("AccelerometerControlCanvasHeight", ref _accelerometerControlCanvasHeight, value); } }
-        public double AccelerometerControlCanvasHalfHeight { get { return _accelerometerControlCanvasHeight / 2; } }
-        public double AccelerometerControlCanvasHalfWidth { get { return _accelerometerControlCanvasWidth / 2; } }
-
-        private System.Double _accelerometerControlEllipseLeft;
-        public System.Double AccelerometerControlEllipseLeft { get { return _accelerometerControlEllipseLeft; } set { Set("AccelerometerControlEllipseLeft", ref _accelerometerControlEllipseLeft, value); } }
-        private System.Double _accelerometerControlEllipseTop;
-        public System.Double AccelerometerControlEllipseTop { get { return _accelerometerControlEllipseTop; } set { Set("AccelerometerControlEllipseTop", ref _accelerometerControlEllipseTop, value); } }
-        #endregion
+        }        
+        
         #endregion
 
         #region Constructors
-        public VMHome(NavigationService navigationService, PingService pingService, NetworkStatusService networkStatusService, DeviceService deviceService, LocationService locationService, AccelerometerService accelerometerService)
+        public VMHome(NavigationService navigationService, PingService pingService, NetworkStatusService networkStatusService, DeviceService deviceService, LocationService locationService)
             : base(navigationService)
         {
             this._pingService = pingService;
             this._networkStatusService = networkStatusService;
             this._deviceService = deviceService;
-            this._locationService = locationService;
-            this.Status = new VMStatus();
-            this._locationService.PositionChanged += _locationService_PositionChanged;
-            this._accelerometerService = accelerometerService;
-            this._accelerometerService.ReadingChanged += _accelerometerService_ReadingChanged;
-            this.AccelerometerControlCanvasWidth = 400;
-            this.AccelerometerControlCanvasHeight = 400;
-            this.AccelerometerControlEllipseLeft = (this.AccelerometerControlCanvasWidth / 2);
-            this.AccelerometerControlEllipseTop = (this.AccelerometerControlCanvasHeight / 2);
+            this._locationService = locationService;            
+            this._locationService.PositionChanged += _locationService_PositionChanged;                                    
         }        
         #endregion
 
@@ -187,31 +161,7 @@ namespace WPMobileNet.ViewModel
                 }
                 this.Status.Model.LocationOrigin = EnumHelper.LocationOrigin.PositionChangeEvent;
             });
-        }
-        private void _accelerometerService_ReadingChanged(object sender, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                this.Status.Model.AccelerationX = e.Reading.AccelerationX;
-                this.Status.Model.AccelerationY = e.Reading.AccelerationY;
-                this.Status.Model.AccelerationZ = e.Reading.AccelerationZ;
-                double delta = 20;
-                var qtdWidth = e.Reading.AccelerationX * delta;
-                var qtdHeight = e.Reading.AccelerationY * delta;
-                var sumWidth = this.AccelerometerControlEllipseLeft + qtdWidth;
-                var sumHeight = this.AccelerometerControlEllipseTop - qtdHeight;
-                if (sumWidth > 0 && sumWidth <= this.AccelerometerControlCanvasWidth - 50)
-                {
-                    this.AccelerometerControlEllipseLeft = sumWidth;
-                }
-                if (sumHeight > 0 && sumHeight <= this.AccelerometerControlCanvasHeight -50)
-                {
-                    this.AccelerometerControlEllipseTop = sumHeight;
-                }
-                //if (sumWidth >= 0 && sumWidth <= this.AccelerometerControlCanvasWidth) this.AccelerometerControlEllipseLeft = sumWidth;
-                //if (sumHeight >= 0 && sumHeight <= this.AccelerometerControlCanvasHeight) this.AccelerometerControlEllipseTop = sumHeight;                                
-            });
-        }
+        }        
         #endregion
     }
 }

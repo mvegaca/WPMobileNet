@@ -15,6 +15,12 @@ namespace WPMobileNet.ViewModel
         #endregion
 
         #region Properties
+        private VMStatus _status;
+        public VMStatus Status
+        {
+            get { return _status; }
+            set { Set("Status", ref _status, value); }
+        }
         #endregion
 
         #region Constructors
@@ -22,6 +28,7 @@ namespace WPMobileNet.ViewModel
         public VMBase(NavigationService navigationService)
         {
             this._navigationService = navigationService;
+            this.Status = new VMStatus();
         }
         #endregion
 
