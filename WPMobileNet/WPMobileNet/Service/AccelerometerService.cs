@@ -24,12 +24,11 @@ namespace WPMobileNet.Service
         #region Pedometer
         double[] mScale = new double[2];
         private double mYOffset;
-        //private double mLimit = 4;
-        private double mLimit = 1.5;
-        private double[] mLastValues = new double[3 * 2];
-        private double[] mLastDirections = new double[3 * 2];
-        private double[][] mLastExtremes = { new double[3 * 2], new double[3 * 2] };
-        private double[] mLastDiff = new double[3 * 2];
+        private double mLimit = 4;
+        private double mLastValues;
+        private double mLastDirections;
+        private double[] mLastExtremes = new double[2];
+        private double mLastDiff;
         private int mLastMatch = -1;
         private double[] event_values = new double[3];
         private int stepsInaRow = 0;
@@ -74,19 +73,19 @@ namespace WPMobileNet.Service
                 double vaux = mYOffset + event_values[i] * mScale[1];
                 vSum += vaux;
             }
-            int k = 0;
             double v = vSum / 3;
-            float direction = (v > mLastValues[k] ? 1 : (v < mLastValues[k] ? -1 : 0));
-            if (direction == -mLastDirections[k])
+            float direction = (v > mLastValues ? 1 : (v < mLastValues ? -1 : 0));
+            if (direction == -mLastDirections)
             {
                 // Direction changed
                 int extType = (direction > 0 ? 0 : 1); // minumum ormaximum?
-                mLastExtremes[extType][k] = mLastValues[k];
-                double diff = Math.Abs(mLastExtremes[extType][k] - mLastExtremes[1 - extType][k]);
+                mLastExtremes[extType] = mLastValues;
+                double diff = Math.Abs(mLastExtremes[extType] - mLastExtremes[1 - extType]);
+                System.Diagnostics.Debug.WriteLine("Diff: " + diff);
                 if (diff > mLimit)
                 {
-                    bool isAlmostAsLargeAsPrevious = diff > (mLastDiff[k] * 2 / 3);
-                    bool isPreviousLargeEnough = mLastDiff[k] > (diff / 3);
+                    bool isAlmostAsLargeAsPrevious = diff > (mLastDiff * 2 / 3);
+                    bool isPreviousLargeEnough = mLastDiff > (diff / 3);
                     bool isNotContra = (mLastMatch != 1 - extType);
                     if (isAlmostAsLargeAsPrevious && isPreviousLargeEnough && isNotContra)
                     {
@@ -157,10 +156,10 @@ namespace WPMobileNet.Service
                         mLastMatch = -1;
                     }
                 }
-                mLastDiff[k] = diff;
+                mLastDiff = diff;
             }
-            mLastDirections[k] = direction;
-            mLastValues[k] = v;
+            mLastDirections = direction;
+            mLastValues = v;
             TimeSpan ts2 = DateTime.Now - lasStepStamp;            
             if (ts2.TotalMilliseconds > (ACTION_EVAL_TIMER * 2) && isWalking)
             {
