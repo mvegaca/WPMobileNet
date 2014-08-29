@@ -24,7 +24,8 @@ namespace WPMobileNet.Service
         #region Pedometer
         double[] mScale = new double[2];
         private double mYOffset;
-        private double mLimit = 4;
+        //private double mLimit = 4;
+        private double mLimit = 1.5;
         private double[] mLastValues = new double[3 * 2];
         private double[] mLastDirections = new double[3 * 2];
         private double[][] mLastExtremes = { new double[3 * 2], new double[3 * 2] };
@@ -94,6 +95,7 @@ namespace WPMobileNet.Service
                         if (ts.TotalMilliseconds > 1500) stepsInaRow = 0;
                         
                         stepsInaRow++;
+                        if (SteepDetected != null) SteepDetected(null, EventArgs.Empty);
                         // Si el delta es demasiado grande, hay mas de 3
                         // pasos seguidos ajusta deltaT a WALKING_DELTA
                         // (3.5Km/h) y haz un retrigger
@@ -129,8 +131,7 @@ namespace WPMobileNet.Service
                             }
                             // stepsInaRow = 0;
                             this.isWalking = true;
-                            if (PedometerStatusChanged != null) PedometerStatusChanged(null, EnumHelper.PedometerStatus.Walking);
-                            if (SteepDetected != null) SteepDetected(null, EventArgs.Empty);
+                            if (PedometerStatusChanged != null) PedometerStatusChanged(null, EnumHelper.PedometerStatus.Walking);                            
                         }
                         else
                         {

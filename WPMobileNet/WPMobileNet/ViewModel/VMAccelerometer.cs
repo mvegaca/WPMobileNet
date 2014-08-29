@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Phone.Shell;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,10 @@ namespace WPMobileNet.ViewModel
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 this.Steeps++;
+                ShellToast toast = new ShellToast();
+                toast.Title = "Pedometer";
+                toast.Content = string.Format("Number of steeps: {0}", this.Steeps);
+                toast.Show();
             });
         }
         private void UpdateEllipseValues(Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs e)
