@@ -42,8 +42,14 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Path=LocalizedResources.StatusPedometerStatus, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                     <TextBlock Text="{Binding PedometerStatus}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                    <TextBlock Text="{Binding Path=LocalizedResources.StatusSteeps, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Steeps}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.StatusSteeps, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>                    
+                    <TextBlock
+                        Text="{Binding Steeps}"    
+                        Style="{StaticResource PhoneTextHugeStyle}" Margin="0"/>
+                    <Button
+                        Content="{Binding ButtonContent}"
+                        Margin="-12,0,-12,0"
+                        Command="{Binding StartStopCommand}"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

@@ -42,7 +42,6 @@ namespace WPMobileNet.Service
         public AccelerometerService()
         {
             this._sensor = Accelerometer.GetDefault();
-            this._sensor.ReadingChanged += _sensor_ReadingChanged;
             int h = 480;
             mYOffset = h * 0.5f;
             mScale[0] = -(h * 0.5f * (1.0f / (STANDARD_GRAVITY * 2)));
@@ -169,6 +168,15 @@ namespace WPMobileNet.Service
                 if (PedometerStatusChanged != null) PedometerStatusChanged(null, EnumHelper.PedometerStatus.Stoped);
             }
         }
+        internal void Start()
+        {
+            this._sensor.ReadingChanged += _sensor_ReadingChanged;
+        }
+        internal void Stop()
+        {
+            this._sensor.ReadingChanged -= _sensor_ReadingChanged;
+        }
         #endregion
+
     }
 }

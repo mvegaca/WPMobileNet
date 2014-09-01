@@ -54,7 +54,9 @@ namespace WPMobileNet.ViewModel
                 {
                     {"VHome", new Uri("/View/VHome.xaml", UriKind.Relative)},
                     {"VAccelerometer", new Uri("/View/VAccelerometer.xaml", UriKind.Relative)},
-                    {"VPedometer", new Uri("/View/VPedometer.xaml", UriKind.Relative)}
+                    {"VPedometer", new Uri("/View/VPedometer.xaml", UriKind.Relative)},
+                    {"VInformation", new Uri("/View/VInformation.xaml", UriKind.Relative)},                    
+                    {"VScreen", new Uri("/View/VScreen.xaml", UriKind.Relative)}
                 }
             });
             //ViewModels

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Microsoft.Phone.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,38 @@ namespace WPMobileNet.ViewModel
         private void ExecuteNavigateCommand(string parameter)
         {
             _navigationService.Navigate(parameter);
+        }
+        #endregion
+        #region OpenWebBrowserCommand
+        private RelayCommand<string> _openWebBrowserCommand;
+        public RelayCommand<string> OpenWebBrowserCommand
+        {
+            get
+            {
+                return _openWebBrowserCommand ?? (_openWebBrowserCommand = new RelayCommand<string>(ExecuteOpenWebBrowserCommand));
+            }
+        }
+        private void ExecuteOpenWebBrowserCommand(string parameter)
+        {
+            WebBrowserTask task = new WebBrowserTask();
+            task.Uri = new Uri(parameter, UriKind.Absolute);
+            task.Show();
+        }
+        #endregion
+        #region OpenMailCommand
+        private RelayCommand<string> _openMailCommand;
+        public RelayCommand<string> OpenMailCommand
+        {
+            get
+            {
+                return _openMailCommand ?? (_openMailCommand = new RelayCommand<string>(ExecuteOpenMailCommand));
+            }
+        }
+        private void ExecuteOpenMailCommand(string parameter)
+        {
+            EmailComposeTask task = new EmailComposeTask();
+            task.To = parameter;
+            task.Show();
         }
         #endregion
         #endregion

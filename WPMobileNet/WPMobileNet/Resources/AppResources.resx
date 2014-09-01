@@ -299,4 +299,49 @@
   <data name="StatusSteeps" xml:space="preserve">
     <value>Steeps</value>
   </data>
+  <data name="VHomeAppBarIcon1" xml:space="preserve">
+    <value>info</value>
+  </data>
+  <data name="VInformationTitle" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="VInformationAppCode" xml:space="preserve">
+    <value>This appication has an open source code on a public GitHub server.</value>
+  </data>
+  <data name="VInformationAppCodeTitle" xml:space="preserve">
+    <value>App code</value>
+  </data>
+  <data name="VInformationAppVersion" xml:space="preserve">
+    <value>1.0.0.0</value>
+  </data>
+  <data name="VInformationAppVersionTitle" xml:space="preserve">
+    <value>App version</value>
+  </data>
+  <data name="VInformationDevelopedBy" xml:space="preserve">
+    <value>Martin Vega Caballero</value>
+  </data>
+  <data name="VInformationDevelopedByTitle" xml:space="preserve">
+    <value>Developed by</value>
+  </data>
+  <data name="VInformationGitHubUri" xml:space="preserve">
+    <value>https://github.com/mvegaca/WPMobileNet</value>
+  </data>
+  <data name="VInformationSupport" xml:space="preserve">
+    <value>mvegaca@outlook.com</value>
+  </data>
+  <data name="VInformationSupportTitle" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="VHomeSensorsItemHeader3" xml:space="preserve">
+    <value>Screen</value>
+  </data>
+  <data name="VHomeSensorsItemLabel3" xml:space="preserve">
+    <value>Screen and Themes values.</value>
+  </data>
+  <data name="VScreenPivotItemHeader0" xml:space="preserve">
+    <value>Theme+colors</value>
+  </data>
+  <data name="VScreenPivotTitle" xml:space="preserve">
+    <value>Screen</value>
+  </data>
 </root>

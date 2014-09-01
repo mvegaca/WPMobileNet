@@ -1,4 +1,5 @@
-﻿using Microsoft.Phone.Shell;
+﻿using GalaSoft.MvvmLight.Command;
+using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,10 +33,14 @@ namespace WPMobileNet.ViewModel
         public System.Double AccelerometerControlEllipseTop { get { return _accelerometerControlEllipseTop; } set { Set("AccelerometerControlEllipseTop", ref _accelerometerControlEllipseTop, value); } }
 
         #region Pedometer
+        private const string ButtonContentStart = "Start";
+        private const string ButtonContentStop = "Stop";
         private EnumHelper.PedometerStatus _pedometerStatus;
         public EnumHelper.PedometerStatus PedometerStatus { get { return _pedometerStatus; } set { Set("PedometerStatus", ref _pedometerStatus, value); } }
         private int _steeps;
         public int Steeps { get { return _steeps; } set { Set("Steeps", ref _steeps, value); } }
+        private string _buttonContent;
+        public string ButtonContent { get { return _buttonContent; } set { Set("ButtonContent", ref _buttonContent, value); } }
         #endregion
         #endregion
 
@@ -52,6 +57,7 @@ namespace WPMobileNet.ViewModel
             this.AccelerometerControlCircleSize = 50;
             this.AccelerometerControlEllipseLeft = (this.AccelerometerControlCanvasWidth / 2) - this.AccelerometerControlCircleHalfSize;
             this.AccelerometerControlEllipseTop = (this.AccelerometerControlCanvasHeight / 2) - this.AccelerometerControlCircleHalfSize;
+            this.ButtonContent = ButtonContentStart;
         }
 
 
@@ -102,6 +108,40 @@ namespace WPMobileNet.ViewModel
                 this.AccelerometerControlEllipseTop = sumHeight;
             }
         }
+        #endregion
+
+        #region Commands
+        #region StartStopCommand
+        private RelayCommand _startStopCommand;
+        public RelayCommand StartStopCommand
+        {
+            get
+            {
+                return _startStopCommand ?? (_startStopCommand = new RelayCommand(ExecuteStartStopCommand));
+            }
+        }
+        private void ExecuteStartStopCommand()
+        {
+            if (this.PedometerStatus == EnumHelper.PedometerStatus.Stoped)
+            {
+                this.PedometerStatus = EnumHelper.PedometerStatus.Starting;
+                this.Start();
+                this.ButtonContent = ButtonContentStop;
+            }
+            else
+            {
+                this.PedometerStatus = EnumHelper.PedometerStatus.Stoped;
+                this.Stop();
+                this.ButtonContent = ButtonContentStart;
+                this._accelerometerService.isWalking = false;
+            }
+        }
+        #endregion
+        #endregion
+
+        #region Methods
+        public void Start() { this._accelerometerService.Start(); }
+        public void Stop() { this._accelerometerService.Stop(); }
         #endregion
     }
 }

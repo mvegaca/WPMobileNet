@@ -502,6 +502,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to info.
+        /// </summary>
+        public static string VHomeAppBarIcon1 {
+            get {
+                return ResourceManager.GetString("VHomeAppBarIcon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update Status.
         /// </summary>
         public static string VHomeButtonUpdateStatus {
@@ -583,6 +592,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Screen.
+        /// </summary>
+        public static string VHomeSensorsItemHeader3 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get X, Y, and Z axis accelerations..
         /// </summary>
         public static string VHomeSensorsItemLabel1 {
@@ -597,6 +615,123 @@ namespace WPMobileNet.Resources {
         public static string VHomeSensorsItemLabel2 {
             get {
                 return ResourceManager.GetString("VHomeSensorsItemLabel2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen and Themes values..
+        /// </summary>
+        public static string VHomeSensorsItemLabel3 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This appication has an open source code on a public GitHub server..
+        /// </summary>
+        public static string VInformationAppCode {
+            get {
+                return ResourceManager.GetString("VInformationAppCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App code.
+        /// </summary>
+        public static string VInformationAppCodeTitle {
+            get {
+                return ResourceManager.GetString("VInformationAppCodeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.0.0.0.
+        /// </summary>
+        public static string VInformationAppVersion {
+            get {
+                return ResourceManager.GetString("VInformationAppVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App version.
+        /// </summary>
+        public static string VInformationAppVersionTitle {
+            get {
+                return ResourceManager.GetString("VInformationAppVersionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Martin Vega Caballero.
+        /// </summary>
+        public static string VInformationDevelopedBy {
+            get {
+                return ResourceManager.GetString("VInformationDevelopedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Developed by.
+        /// </summary>
+        public static string VInformationDevelopedByTitle {
+            get {
+                return ResourceManager.GetString("VInformationDevelopedByTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/mvegaca/WPMobileNet.
+        /// </summary>
+        public static string VInformationGitHubUri {
+            get {
+                return ResourceManager.GetString("VInformationGitHubUri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mvegaca@outlook.com.
+        /// </summary>
+        public static string VInformationSupport {
+            get {
+                return ResourceManager.GetString("VInformationSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string VInformationSupportTitle {
+            get {
+                return ResourceManager.GetString("VInformationSupportTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string VInformationTitle {
+            get {
+                return ResourceManager.GetString("VInformationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme+colors.
+        /// </summary>
+        public static string VScreenPivotItemHeader0 {
+            get {
+                return ResourceManager.GetString("VScreenPivotItemHeader0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen.
+        /// </summary>
+        public static string VScreenPivotTitle {
+            get {
+                return ResourceManager.GetString("VScreenPivotTitle", resourceCulture);
             }
         }
     }
