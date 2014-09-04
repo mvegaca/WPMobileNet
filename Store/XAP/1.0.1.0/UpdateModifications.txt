@@ -1,0 +1,2 @@
+Include Google Analytics
+ResourceString bugs fixed

@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WPMobileNet.Resources;
 using WPMobileNet.ViewModel;
+using WPMobileNet.Service;
 
 namespace WPMobileNet
 {
@@ -63,12 +64,13 @@ namespace WPMobileNet
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            AnalyticsService.SendEvent(AnalyticsService.EventCategory.Application, AnalyticsService.EventAction.ApplicationLaunching);
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
-        {
+        {            
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -82,6 +84,7 @@ namespace WPMobileNet
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
             ViewModelLocator.Cleanup();
+            AnalyticsService.SendEvent(AnalyticsService.EventCategory.Application, AnalyticsService.EventAction.ApplicationClosing);
         }
 
         // Code to execute if a navigation fails
@@ -97,6 +100,7 @@ namespace WPMobileNet
         // Code to execute on Unhandled Exceptions
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            AnalyticsService.SendEvent(AnalyticsService.EventCategory.Application, AnalyticsService.EventAction.ApplicationUnhandledException);
             if (Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger

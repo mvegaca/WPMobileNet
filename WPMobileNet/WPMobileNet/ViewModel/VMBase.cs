@@ -61,6 +61,7 @@ namespace WPMobileNet.ViewModel
         {
             WebBrowserTask task = new WebBrowserTask();
             task.Uri = new Uri(parameter, UriKind.Absolute);
+            AnalyticsService.SendEvent(AnalyticsService.EventCategory.Actions, AnalyticsService.EventAction.OpenWebBrowser);
             task.Show();
         }
         #endregion
@@ -77,6 +78,7 @@ namespace WPMobileNet.ViewModel
         {
             EmailComposeTask task = new EmailComposeTask();
             task.To = parameter;
+            AnalyticsService.SendEvent(AnalyticsService.EventCategory.Actions, AnalyticsService.EventAction.SendMail);
             task.Show();
         }
         #endregion

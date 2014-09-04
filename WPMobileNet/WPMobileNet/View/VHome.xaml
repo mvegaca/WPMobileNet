@@ -95,6 +95,8 @@
                         <StackPanel Margin="24,0,24,0">
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocation, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocationDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionStatus, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Status.Model.PositionStatus}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitudeAccuracy, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.AltitudeAccuracy}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
@@ -104,9 +106,7 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusLongitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.Longitude}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusSpeed, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding Status.Model.Speed}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                            <TextBlock Text="{Binding Path=LocalizedResources.StatusLocationOrigin, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding Status.Model.LocationOrigin}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <TextBlock Text="{Binding Status.Model.Speed}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>                            
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionSource, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.PositionSource}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusHorizontalDilutionOfPrecision, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
@@ -126,11 +126,7 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusCity, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.City}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPostalCode, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding Status.Model.PostalCode}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                            <Button
-                                Content="{Binding Path=LocalizedResources.VHomeButtonUpdateStatus, Source={StaticResource LocalizedStrings}}"
-                                Margin="-12,0,-12,0"
-                                Command="{Binding GetStatusCommand}"/>
+                            <TextBlock Text="{Binding Status.Model.PostalCode}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>                            
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>
@@ -172,13 +168,37 @@
                                     Text="{Binding Path=LocalizedResources.VHomeSensorsItemLabel3, Source={StaticResource LocalizedStrings}}"
                                     Style="{StaticResource PhoneTextSubtleStyle}"/>
                             </StackPanel>
+                            <!--<StackPanel
+                                Margin="0,12,0,0"
+                                toolkit:TiltEffect.IsTiltEnabled="True" Tap="Navigate_Tap" Tag="VGyrometer">
+                                <TextBlock                    
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemHeader4, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextTitle2Style}"/>
+                                <TextBlock                            
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemLabel4, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>-->
+                            <StackPanel
+                                Margin="0,12,0,0"
+                                toolkit:TiltEffect.IsTiltEnabled="True" Tap="Navigate_Tap" Tag="VInclinometer">
+                                <TextBlock                    
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemHeader5, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextTitle2Style}"/>
+                                <TextBlock                            
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemLabel5, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>                
             </phone:Pivot>
         </Grid>
     </Grid>
-    <i:Interaction.Behaviors>                
+    <!--<i:Interaction.Behaviors>                
         <cimbalino:ApplicationBarBehavior ForegroundColor="{StaticResource PhoneBackgroundColor}" BackgroundColor="{StaticResource PhoneContrastBackgroundColor}" Mode="Minimized">
             <cimbalino:ApplicationBarIconButton                
                 Text="{Binding Path=LocalizedResources.VHomeAppBarIcon1, Source={StaticResource LocalizedStrings}}"
@@ -186,5 +206,5 @@
                 Command="{Binding NavigateCommand}"
                 CommandParameter="VInformation"/>
         </cimbalino:ApplicationBarBehavior>
-    </i:Interaction.Behaviors>
+    </i:Interaction.Behaviors>-->
 </phone:PhoneApplicationPage>

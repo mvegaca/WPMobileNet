@@ -28,6 +28,7 @@ namespace WPMobileNet.ViewModel
                 else return false;
             }
         }
+
         #endregion
 
         #region Constructors

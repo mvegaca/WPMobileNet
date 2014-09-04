@@ -34,12 +34,14 @@ namespace WPMobileNet.Service
         public bool Navigate(string route)
         {
             Uri uri = (Uri)RoutingTable[route];
+            AnalyticsService.SendView(route);
             return this.frame.Navigate(uri);
         }
         public bool Navigate(string route, string parameter)
         {
             string originalString = ((Uri)RoutingTable[route]).OriginalString;
             Uri uri = new Uri(String.Concat(originalString, "?id=", parameter), UriKind.Relative);
+            AnalyticsService.SendView(route);
             return this.frame.Navigate(uri);
         }
 

@@ -91,23 +91,7 @@ namespace WPMobileNet.ViewModel
                 toast.Content = string.Format("Number of steeps: {0}", this.Steeps);
                 toast.Show();
             });
-        }
-        private void UpdateEllipseValues(Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs e)
-        {
-            double delta = 50;
-            var qtdWidth = e.Reading.AccelerationX * delta;
-            var qtdHeight = e.Reading.AccelerationY * delta;
-            var sumWidth = this.AccelerometerControlEllipseLeft + qtdWidth;
-            var sumHeight = this.AccelerometerControlEllipseTop - qtdHeight;
-            if (sumWidth > 0 && sumWidth <= this.AccelerometerControlCanvasWidth - this.AccelerometerControlCircleSize)
-            {
-                this.AccelerometerControlEllipseLeft = sumWidth;
-            }
-            if (sumHeight > 0 && sumHeight <= this.AccelerometerControlCanvasHeight - this.AccelerometerControlCircleSize)
-            {
-                this.AccelerometerControlEllipseTop = sumHeight;
-            }
-        }
+        }        
         #endregion
 
         #region Commands
@@ -140,6 +124,22 @@ namespace WPMobileNet.ViewModel
         #endregion
 
         #region Methods
+        private void UpdateEllipseValues(Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs e)
+        {
+            double delta = 50;
+            var qtdWidth = e.Reading.AccelerationX * delta;
+            var qtdHeight = e.Reading.AccelerationY * delta;
+            var sumWidth = this.AccelerometerControlEllipseLeft + qtdWidth;
+            var sumHeight = this.AccelerometerControlEllipseTop - qtdHeight;
+            if (sumWidth > 0 && sumWidth <= this.AccelerometerControlCanvasWidth - this.AccelerometerControlCircleSize)
+            {
+                this.AccelerometerControlEllipseLeft = sumWidth;
+            }
+            if (sumHeight > 0 && sumHeight <= this.AccelerometerControlCanvasHeight - this.AccelerometerControlCircleSize)
+            {
+                this.AccelerometerControlEllipseTop = sumHeight;
+            }
+        }
         public void Start() { this._accelerometerService.Start(); }
         public void Stop() { this._accelerometerService.Stop(); }
         #endregion

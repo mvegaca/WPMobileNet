@@ -23,6 +23,11 @@ namespace WPMobileNet.ViewModel
         private readonly NetworkStatusService _networkStatusService;
         private readonly DeviceService _deviceService;
         private readonly LocationService _locationService;
+        public LocationService LocationService
+        {
+            get { return _locationService; }
+        }
+
         #endregion
 
         #region Properties
@@ -31,8 +36,7 @@ namespace WPMobileNet.ViewModel
         {
             get { return _isProgressIndicatorVisible; }
             set { Set("IsProgressIndicatorVisible", ref _isProgressIndicatorVisible, value); }
-        }        
-        
+        }
         #endregion
 
         #region Constructors
@@ -42,9 +46,10 @@ namespace WPMobileNet.ViewModel
             this._pingService = pingService;
             this._networkStatusService = networkStatusService;
             this._deviceService = deviceService;
-            this._locationService = locationService;            
-            this._locationService.PositionChanged += _locationService_PositionChanged;                                    
-        }        
+            this._locationService = locationService;
+            this._locationService.PositionChanged += _locationService_PositionChanged;
+            this._locationService.StatusChanged += _locationService_StatusChanged;
+        }
         #endregion
 
         #region Commands
@@ -59,19 +64,17 @@ namespace WPMobileNet.ViewModel
         }
         private void ExecuteGetStatusCommand()
         {
-            GetData(EnumHelper.LocationOrigin.GetGeopositionAsync);
+            GetData();
         }
         #endregion
         #endregion
 
         #region Methods
-        private void GetData(EnumHelper.LocationOrigin locationOrigin)
+        private void GetData()
         {
             this.IsProgressIndicatorVisible = true;
-            this.Status.Model.LocationOrigin = locationOrigin;
             this.GetDeviceData();
             this.GetNetworkData();
-            this.GetLocationData();
             this.IsProgressIndicatorVisible = false;
         }
         private async void GetNetworkData()
@@ -115,38 +118,6 @@ namespace WPMobileNet.ViewModel
             {
             }
         }
-        private async void GetLocationData()
-        {
-            try
-            {
-                await this._locationService.GetCurrentLocation();
-                this.Status.Model.Latitude = this._locationService.CurrentLocation.Coordinate.Latitude;
-                this.Status.Model.Longitude = this._locationService.CurrentLocation.Coordinate.Longitude;
-                var speed = this._locationService.CurrentLocation.Coordinate.Speed;
-                if (this.Status.Model.Speed != speed)
-                {
-                    this.Status.Model.Speed = speed;
-                }
-                this.Status.Model.PositionSource = this._locationService.CurrentLocation.Coordinate.PositionSource.ToString();
-                this.Status.Model.HorizontalDilutionOfPrecision = this._locationService.CurrentLocation.Coordinate.SatelliteData.HorizontalDilutionOfPrecision;
-                this.Status.Model.VerticalDilutionOfPrecision = this._locationService.CurrentLocation.Coordinate.SatelliteData.VerticalDilutionOfPrecision;
-                this.Status.Model.PositionDilutionOfPrecision = this._locationService.CurrentLocation.Coordinate.SatelliteData.PositionDilutionOfPrecision;
-                this.Status.Model.Heading = this._locationService.CurrentLocation.Coordinate.Heading.Value;
-                this.Status.Model.Accuracy = this._locationService.CurrentLocation.Coordinate.Accuracy;
-                this.Status.Model.Altitude = this._locationService.CurrentLocation.Coordinate.Altitude;
-                this.Status.Model.AltitudeAccuracy = this._locationService.CurrentLocation.Coordinate.AltitudeAccuracy;
-                if (this._locationService.CurrentLocation.CivicAddress != null)
-                {
-                    this.Status.Model.City = this._locationService.CurrentLocation.CivicAddress.City;
-                    this.Status.Model.State = this._locationService.CurrentLocation.CivicAddress.State;
-                    this.Status.Model.Country = this._locationService.CurrentLocation.CivicAddress.Country;
-                    this.Status.Model.PostalCode = this._locationService.CurrentLocation.CivicAddress.PostalCode;
-                }
-            }
-            catch (System.Exception)
-            {
-            }
-        }        
         #endregion
 
         #region Events
@@ -154,14 +125,55 @@ namespace WPMobileNet.ViewModel
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                this.Status.Model.Latitude = geoposition.Coordinate.Latitude;
+                this.Status.Model.Longitude = geoposition.Coordinate.Longitude;
                 var speed = geoposition.Coordinate.Speed;
                 if (this.Status.Model.Speed != speed)
                 {
                     this.Status.Model.Speed = speed;
                 }
-                this.Status.Model.LocationOrigin = EnumHelper.LocationOrigin.PositionChangeEvent;
+                this.Status.Model.PositionSource = geoposition.Coordinate.PositionSource.ToString();
+                this.Status.Model.HorizontalDilutionOfPrecision = geoposition.Coordinate.SatelliteData.HorizontalDilutionOfPrecision;
+                this.Status.Model.VerticalDilutionOfPrecision = geoposition.Coordinate.SatelliteData.VerticalDilutionOfPrecision;
+                this.Status.Model.PositionDilutionOfPrecision = geoposition.Coordinate.SatelliteData.PositionDilutionOfPrecision;
+                this.Status.Model.Heading = geoposition.Coordinate.Heading.Value;
+                this.Status.Model.Accuracy = geoposition.Coordinate.Accuracy;
+                this.Status.Model.Altitude = geoposition.Coordinate.Altitude;
+                this.Status.Model.AltitudeAccuracy = geoposition.Coordinate.AltitudeAccuracy;
+                if (geoposition.CivicAddress != null)
+                {
+                    this.Status.Model.City = geoposition.CivicAddress.City;
+                    this.Status.Model.State = geoposition.CivicAddress.State;
+                    this.Status.Model.Country = geoposition.CivicAddress.Country;
+                    this.Status.Model.PostalCode = geoposition.CivicAddress.PostalCode;
+                }
             });
-        }        
+        }
+        private void _locationService_StatusChanged(object sender, string e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                this.Status.Model.PositionStatus = e;
+                if (e.Equals(PositionStatus.Disabled.ToString()) || e.Equals("DeniedByUser"))
+                {
+                    this.Status.Model.Latitude = 0;
+                    this.Status.Model.Longitude = 0;
+                    this.Status.Model.Speed = 0;
+                    this.Status.Model.PositionSource = string.Empty;
+                    this.Status.Model.HorizontalDilutionOfPrecision = 0;
+                    this.Status.Model.VerticalDilutionOfPrecision = 0;
+                    this.Status.Model.PositionDilutionOfPrecision = 0;
+                    this.Status.Model.Heading = 0;
+                    this.Status.Model.Accuracy = 0;
+                    this.Status.Model.Altitude = 0;
+                    this.Status.Model.AltitudeAccuracy = 0;
+                    this.Status.Model.City = string.Empty;
+                    this.Status.Model.State = string.Empty;
+                    this.Status.Model.Country = string.Empty;
+                    this.Status.Model.PostalCode = string.Empty;
+                }                
+            });
+        }
         #endregion
     }
 }

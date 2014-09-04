@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace WPMobileNet.Utils
 {
     public class EnumHelper
-    {
-        public enum LocationOrigin { GetGeopositionAsync, PositionChangeEvent };
-        public enum PedometerStatus { Stoped, Walking, Starting };
-        
+    {        
+        public enum PedometerStatus { Stoped, Walking, Starting };        
     }
 }

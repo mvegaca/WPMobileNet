@@ -48,6 +48,9 @@ namespace WPMobileNet.ViewModel
             SimpleIoc.Default.Register<StateService>();
             SimpleIoc.Default.Register<LocationService>();
             SimpleIoc.Default.Register<AccelerometerService>();
+            SimpleIoc.Default.Register<GyrometerService>();
+            SimpleIoc.Default.Register<InclinometerService>();
+            SimpleIoc.Default.Register<StringResourceService>();
             SimpleIoc.Default.Register<NavigationService>(() => new NavigationService(App.RootFrame)
             {
                 RoutingTable = new Dictionary<string, object>()
@@ -56,12 +59,17 @@ namespace WPMobileNet.ViewModel
                     {"VAccelerometer", new Uri("/View/VAccelerometer.xaml", UriKind.Relative)},
                     {"VPedometer", new Uri("/View/VPedometer.xaml", UriKind.Relative)},
                     {"VInformation", new Uri("/View/VInformation.xaml", UriKind.Relative)},                    
-                    {"VScreen", new Uri("/View/VScreen.xaml", UriKind.Relative)}
+                    {"VScreen", new Uri("/View/VScreen.xaml", UriKind.Relative)},
+                    {"VGyrometer", new Uri("/View/VGyrometer.xaml", UriKind.Relative)},
+                    {"VSettings", new Uri("/View/VSettings.xaml", UriKind.Relative)},
+                    {"VInclinometer", new Uri("/View/VInclinometer.xaml", UriKind.Relative)}
                 }
             });
             //ViewModels
             SimpleIoc.Default.Register<VMHome>();
-            SimpleIoc.Default.Register<VMAccelerometer>();            
+            SimpleIoc.Default.Register<VMAccelerometer>();
+            SimpleIoc.Default.Register<VMGyrometer>();
+            SimpleIoc.Default.Register<VMInclinometer>();
         }
 
         /// <summary>
@@ -89,6 +97,34 @@ namespace WPMobileNet.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<VMAccelerometer>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public VMGyrometer Gyrometer
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VMGyrometer>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public VMInclinometer Inclinometer
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VMInclinometer>();
             }
         }
 

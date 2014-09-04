@@ -160,6 +160,33 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AngularVelocityX.
+        /// </summary>
+        public static string StatusAngularVelocityX {
+            get {
+                return ResourceManager.GetString("StatusAngularVelocityX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AngularVelocityY.
+        /// </summary>
+        public static string StatusAngularVelocityY {
+            get {
+                return ResourceManager.GetString("StatusAngularVelocityY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AngularVelocityZ.
+        /// </summary>
+        public static string StatusAngularVelocityZ {
+            get {
+                return ResourceManager.GetString("StatusAngularVelocityZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         public static string StatusCity {
@@ -187,7 +214,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Device battery, hardware, frimware and other kind of properties..
+        ///   Looks up a localized string similar to Device battery, hardware, firmware and other kind of properties..
         /// </summary>
         public static string StatusDeviceDescription {
             get {
@@ -412,6 +439,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PitchDegrees.
+        /// </summary>
+        public static string StatusPitchDegrees {
+            get {
+                return ResourceManager.GetString("StatusPitchDegrees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position Dilution Of Precision.
         /// </summary>
         public static string StatusPositionDilutionOfPrecision {
@@ -426,6 +462,15 @@ namespace WPMobileNet.Resources {
         public static string StatusPositionSource {
             get {
                 return ResourceManager.GetString("StatusPositionSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PositionStatus.
+        /// </summary>
+        public static string StatusPositionStatus {
+            get {
+                return ResourceManager.GetString("StatusPositionStatus", resourceCulture);
             }
         }
         
@@ -453,6 +498,15 @@ namespace WPMobileNet.Resources {
         public static string StatusRemainingChargePercent {
             get {
                 return ResourceManager.GetString("StatusRemainingChargePercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RollDegrees.
+        /// </summary>
+        public static string StatusRollDegrees {
+            get {
+                return ResourceManager.GetString("StatusRollDegrees", resourceCulture);
             }
         }
         
@@ -493,6 +547,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to YawDegrees.
+        /// </summary>
+        public static string StatusYawDegrees {
+            get {
+                return ResourceManager.GetString("StatusYawDegrees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accelerometer sensor measure X, Y, and Z axis accelerations in m/s2..
         /// </summary>
         public static string VAccelerometerDescription {
@@ -502,11 +565,47 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gyrometer sensor measure X, Y, and Z axis angular velocities in m/s..
+        /// </summary>
+        public static string VGyrometerDescription {
+            get {
+                return ResourceManager.GetString("VGyrometerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to info.
         /// </summary>
         public static string VHomeAppBarIcon1 {
             get {
                 return ResourceManager.GetString("VHomeAppBarIcon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string VHomeAppBarIcon2 {
+            get {
+                return ResourceManager.GetString("VHomeAppBarIcon2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Assets/AppBarIcons/questionmark.png.
+        /// </summary>
+        public static string VHomeAppBarIconUri1 {
+            get {
+                return ResourceManager.GetString("VHomeAppBarIconUri1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Assets/AppBarIcons/settings.png.
+        /// </summary>
+        public static string VHomeAppBarIconUri2 {
+            get {
+                return ResourceManager.GetString("VHomeAppBarIconUri2", resourceCulture);
             }
         }
         
@@ -601,7 +700,25 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get X, Y, and Z axis accelerations..
+        ///   Looks up a localized string similar to Gyrometer.
+        /// </summary>
+        public static string VHomeSensorsItemHeader4 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inclinometer.
+        /// </summary>
+        public static string VHomeSensorsItemHeader5 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get X, Y, and Z axis acceleration..
         /// </summary>
         public static string VHomeSensorsItemLabel1 {
             get {
@@ -610,7 +727,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Steep counter..
+        ///   Looks up a localized string similar to Step counter..
         /// </summary>
         public static string VHomeSensorsItemLabel2 {
             get {
@@ -628,7 +745,34 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This appication has an open source code on a public GitHub server..
+        ///   Looks up a localized string similar to Get X, Y, and Z axis angular velocities..
+        /// </summary>
+        public static string VHomeSensorsItemLabel4 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get X, Y, and Z axis inclination degrees..
+        /// </summary>
+        public static string VHomeSensorsItemLabel5 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inclinometer sensor measure X, Y, and Z axis inclination in degrees..
+        /// </summary>
+        public static string VInclinometerDescription {
+            get {
+                return ResourceManager.GetString("VInclinometerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application has an open source code on a public GitHub server..
         /// </summary>
         public static string VInformationAppCode {
             get {
@@ -646,7 +790,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.0.0.
+        ///   Looks up a localized string similar to 1.0.1.0.
         /// </summary>
         public static string VInformationAppVersion {
             get {
@@ -732,6 +876,33 @@ namespace WPMobileNet.Resources {
         public static string VScreenPivotTitle {
             get {
                 return ResourceManager.GetString("VScreenPivotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string VSettingsLocation {
+            get {
+                return ResourceManager.GetString("VSettingsLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WPMobileNet will use locations services to show device GPS information in the home page..
+        /// </summary>
+        public static string VSettingsLocationDescription {
+            get {
+                return ResourceManager.GetString("VSettingsLocationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string VSettingsTitle {
+            get {
+                return ResourceManager.GetString("VSettingsTitle", resourceCulture);
             }
         }
     }

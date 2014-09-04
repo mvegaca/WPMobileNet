@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
 using WPMobileNet.Utils;
 using WPMobileNet.ViewModel;
 
@@ -165,14 +166,6 @@ namespace WPMobileNet.Model
             get { return _speed; }
             set { Set("Speed", ref _speed, value); }
         }
-
-        private EnumHelper.LocationOrigin _locationOrigin;
-        [DataMember]
-        public EnumHelper.LocationOrigin LocationOrigin
-        {
-            get { return _locationOrigin; }
-            set { Set("LocationOrigin", ref _locationOrigin, value); }
-        }
         
         private string _positionSource;
         [DataMember]
@@ -254,6 +247,13 @@ namespace WPMobileNet.Model
             get { return _postalCode; }
             set { Set("PostalCode", ref _postalCode, value); }
         }
+        private string _positionStatus;
+        [DataMember]
+        public string PositionStatus
+        {
+            get { return _positionStatus; }
+            set { Set("PositionStatus", ref _positionStatus, value); }
+        }
         private bool? _isDeviceMoving;
         [DataMember]
         public bool? IsDeviceMoving
@@ -271,6 +271,37 @@ namespace WPMobileNet.Model
             get { return _isMoving; }
             set { Set("IsMoving", ref _isMoving, value); }
         }
+        private double _accelerationX;
+        [DataMember]
+        public double AccelerationX { get { return _accelerationX; } set { Set("AccelerationX", ref _accelerationX, value); } }
+        private double _accelerationY;
+        [DataMember]
+        public double AccelerationY { get { return _accelerationY; } set { Set("AccelerationY", ref _accelerationY, value); } }
+        private double _accelerationZ;
+        [DataMember]
+        public double AccelerationZ { get { return _accelerationZ; } set { Set("AccelerationZ", ref _accelerationZ, value); } }
+        #endregion
+        #region Gyrometer
+        private double _angularVelocityX;
+        [DataMember]
+        public double AngularVelocityX { get { return _angularVelocityX; } set { Set("AngularVelocityX", ref _angularVelocityX, value); } }
+        private double _angularVelocityY;
+        [DataMember]
+        public double AngularVelocityY { get { return _angularVelocityY; } set { Set("AngularVelocityY", ref _angularVelocityY, value); } }
+        private double _angularVelocityZ;
+        [DataMember]
+        public double AngularVelocityZ { get { return _angularVelocityZ; } set { Set("AngularVelocityZ", ref _angularVelocityZ, value); } }
+        #region Inclinometer
+        private double _pitchDegrees;
+        [DataMember]
+        public double PitchDegrees { get { return _pitchDegrees; } set { Set("PitchDegrees", ref _pitchDegrees, value); } }
+        private double _rollDegrees;
+        [DataMember]
+        public double RollDegrees { get { return _rollDegrees; } set { Set("RollDegrees", ref _rollDegrees, value); } }
+        private double _yawDegrees;
+        [DataMember]
+        public double YawDegrees { get { return _yawDegrees; } set { Set("YawDegrees", ref _yawDegrees, value); } }
+        #endregion
         #endregion
         #region DeviceInformation
         private string _deviceName;
@@ -343,18 +374,7 @@ namespace WPMobileNet.Model
             get { return _remainingChargePercent; }
             set { Set("RemainingChargePercent", ref _remainingChargePercent, value); }
         }
-        #endregion
-        #region Accelerometer
-        private double _accelerationX;
-        [DataMember]
-        public double AccelerationX { get { return _accelerationX; } set { Set("AccelerationX", ref _accelerationX, value); } }
-        private double _accelerationY;
-        [DataMember]
-        public double AccelerationY { get { return _accelerationY; } set { Set("AccelerationY", ref _accelerationY, value); } }
-        private double _accelerationZ;
-        [DataMember]
-        public double AccelerationZ { get { return _accelerationZ; } set { Set("AccelerationZ", ref _accelerationZ, value); } }
-        #endregion
+        #endregion        
         #endregion
 
         #region Constructors

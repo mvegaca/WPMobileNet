@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="WPMobileNet.View.VAccelerometer"
+    x:Class="WPMobileNet.View.VGyrometer"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -9,7 +9,7 @@
     xmlns:ia="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"    
     xmlns:command="clr-namespace:WPMobileNet.CustomBehaviors"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    DataContext="{Binding Source={StaticResource Locator}, Path=Accelerometer}"
+    DataContext="{Binding Source={StaticResource Locator}, Path=Gyrometer}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -32,7 +32,7 @@
                 Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock
                 Margin="0,0,0,0"
-                Text="{Binding Path=LocalizedResources.VHomeSensorsItemHeader1, Source={StaticResource LocalizedStrings}}"
+                Text="{Binding Path=LocalizedResources.VHomeSensorsItemHeader4, Source={StaticResource LocalizedStrings}}"
                 Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
@@ -40,42 +40,43 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,24,0">
             <ScrollViewer>
                 <StackPanel>
-                    <TextBlock Text="{Binding Path=LocalizedResources.VAccelerometerDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextBlockBase}" Margin="0" TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationX, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Status.Model.AccelerationX}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationY, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Status.Model.AccelerationY}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
-                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAccelerationZ, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Status.Model.AccelerationZ}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.VGyrometerDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextBlockBase}" Margin="0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAngularVelocityX, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Status.Model.AngularVelocityX}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAngularVelocityY, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Status.Model.AngularVelocityY}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.StatusAngularVelocityZ, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Status.Model.AngularVelocityZ}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                     <Canvas
                         HorizontalAlignment="Left"
-                        Width="{Binding AccelerometerControlCanvasWidth}"
-                        Height="{Binding AccelerometerControlCanvasHeight}"
+                        Width="{Binding ControlCanvasWidth}"
+                        Height="{Binding ControlCanvasHeight}"
                         Background="Transparent"
                         Margin="0,12,0,0">
                         <Line
                             Stroke="{StaticResource PhoneForegroundBrush}"
                             X1="0"
-                            Y1="{Binding AccelerometerControlCanvasHalfHeight}"
-                            X2="{Binding AccelerometerControlCanvasWidth}"
-                            Y2="{Binding AccelerometerControlCanvasHalfHeight}"/>
+                            Y1="{Binding ControlCanvasHalfHeight}"
+                            X2="{Binding ControlCanvasWidth}"
+                            Y2="{Binding ControlCanvasHalfHeight}"/>
                         <Line
                             Stroke="{StaticResource PhoneForegroundBrush}"
-                            X1="{Binding AccelerometerControlCanvasHalfWidth}"
+                            X1="{Binding ControlCanvasHalfWidth}"
                             Y1="0"                                    
-                            X2="{Binding AccelerometerControlCanvasHalfWidth}"
-                            Y2="{Binding AccelerometerControlCanvasHeight}"/>
+                            X2="{Binding ControlCanvasHalfWidth}"
+                            Y2="{Binding ControlCanvasHeight}"/>
                         <Ellipse
-                            Width="{Binding AccelerometerControlCircleSize}"
-                            Height="{Binding AccelerometerControlCircleSize}"
+                            Width="{Binding ControlCircleSize}"
+                            Height="{Binding ControlCircleSize}"
                             Stroke="{StaticResource PhoneForegroundBrush}"
                             Fill="Transparent"
                             StrokeThickness="5"
-                            Canvas.Top="{Binding AccelerometerControlEllipseTop}"
-                            Canvas.Left="{Binding AccelerometerControlEllipseLeft}"/>
+                            Canvas.Top="{Binding ControlEllipseTop}"
+                            Canvas.Left="{Binding ControlEllipseLeft}"/>
                     </Canvas>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
     </Grid>
+
 </phone:PhoneApplicationPage>

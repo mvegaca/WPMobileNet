@@ -156,7 +156,7 @@
     <value>Device</value>
   </data>
   <data name="StatusDeviceDescription" xml:space="preserve">
-    <value>Device battery, hardware, frimware and other kind of properties.</value>
+    <value>Device battery, hardware, firmware and other kind of properties.</value>
   </data>
   <data name="StatusDeviceFirmwareVersion" xml:space="preserve">
     <value>Firmware version</value>
@@ -282,13 +282,13 @@
     <value>Accelerometer</value>
   </data>
   <data name="VHomeSensorsItemLabel1" xml:space="preserve">
-    <value>Get X, Y, and Z axis accelerations.</value>
+    <value>Get X, Y, and Z axis acceleration.</value>
   </data>
   <data name="VHomeSensorsItemHeader2" xml:space="preserve">
     <value>Pedometer</value>
   </data>
   <data name="VHomeSensorsItemLabel2" xml:space="preserve">
-    <value>Steep counter.</value>
+    <value>Step counter.</value>
   </data>
   <data name="VAccelerometerDescription" xml:space="preserve">
     <value>Accelerometer sensor measure X, Y, and Z axis accelerations in m/s2.</value>
@@ -306,13 +306,13 @@
     <value>Information</value>
   </data>
   <data name="VInformationAppCode" xml:space="preserve">
-    <value>This appication has an open source code on a public GitHub server.</value>
+    <value>This application has an open source code on a public GitHub server.</value>
   </data>
   <data name="VInformationAppCodeTitle" xml:space="preserve">
     <value>App code</value>
   </data>
   <data name="VInformationAppVersion" xml:space="preserve">
-    <value>1.0.0.0</value>
+    <value>1.0.1.0</value>
   </data>
   <data name="VInformationAppVersionTitle" xml:space="preserve">
     <value>App version</value>
@@ -343,5 +343,62 @@
   </data>
   <data name="VScreenPivotTitle" xml:space="preserve">
     <value>Screen</value>
+  </data>
+  <data name="VHomeSensorsItemHeader4" xml:space="preserve">
+    <value>Gyrometer</value>
+  </data>
+  <data name="VHomeSensorsItemLabel4" xml:space="preserve">
+    <value>Get X, Y, and Z axis angular velocities.</value>
+  </data>
+  <data name="StatusAngularVelocityX" xml:space="preserve">
+    <value>AngularVelocityX</value>
+  </data>
+  <data name="StatusAngularVelocityY" xml:space="preserve">
+    <value>AngularVelocityY</value>
+  </data>
+  <data name="StatusAngularVelocityZ" xml:space="preserve">
+    <value>AngularVelocityZ</value>
+  </data>
+  <data name="VGyrometerDescription" xml:space="preserve">
+    <value>Gyrometer sensor measure X, Y, and Z axis angular velocities in m/s.</value>
+  </data>
+  <data name="VHomeAppBarIconUri1" xml:space="preserve">
+    <value>/Assets/AppBarIcons/questionmark.png</value>
+  </data>
+  <data name="VSettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="VSettingsLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="VSettingsLocationDescription" xml:space="preserve">
+    <value>WPMobileNet will use locations services to show device GPS information in the home page.</value>
+  </data>
+  <data name="VHomeAppBarIcon2" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="VHomeAppBarIconUri2" xml:space="preserve">
+    <value>/Assets/AppBarIcons/settings.png</value>
+  </data>
+  <data name="StatusPositionStatus" xml:space="preserve">
+    <value>PositionStatus</value>
+  </data>
+  <data name="VHomeSensorsItemHeader5" xml:space="preserve">
+    <value>Inclinometer</value>
+  </data>
+  <data name="VHomeSensorsItemLabel5" xml:space="preserve">
+    <value>Get X, Y, and Z axis inclination degrees.</value>
+  </data>
+  <data name="StatusPitchDegrees" xml:space="preserve">
+    <value>PitchDegrees</value>
+  </data>
+  <data name="StatusRollDegrees" xml:space="preserve">
+    <value>RollDegrees</value>
+  </data>
+  <data name="StatusYawDegrees" xml:space="preserve">
+    <value>YawDegrees</value>
+  </data>
+  <data name="VInclinometerDescription" xml:space="preserve">
+    <value>Inclinometer sensor measure X, Y, and Z axis inclination in degrees.</value>
   </data>
 </root>
