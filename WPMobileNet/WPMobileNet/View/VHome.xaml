@@ -192,6 +192,18 @@
                                     Text="{Binding Path=LocalizedResources.VHomeSensorsItemLabel5, Source={StaticResource LocalizedStrings}}"
                                     Style="{StaticResource PhoneTextSubtleStyle}"/>
                             </StackPanel>
+                            <StackPanel
+                                Margin="0,12,0,0"
+                                toolkit:TiltEffect.IsTiltEnabled="True" Tap="Navigate_Tap" Tag="VWeather">
+                                <TextBlock                    
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemHeader6, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextTitle2Style}"/>
+                                <TextBlock                            
+                                    Margin="0"
+                                    Text="{Binding Path=LocalizedResources.VHomeSensorsItemLabel6, Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>                

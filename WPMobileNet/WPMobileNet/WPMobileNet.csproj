@@ -19,7 +19,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>WPMobileNet_Release_x86_1.0.1.0.xap</XapFilename>
+    <XapFilename>WPMobileNet_Release_x86_1.0.2.0.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>WPMobileNet.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -97,6 +97,7 @@
     <Compile Include="Exception\NetworkInterfaceInfoException.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Model\MStatus.cs" />
+    <Compile Include="Model\MWeather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +110,7 @@
     <Compile Include="Service\DeviceService.cs" />
     <Compile Include="Service\GyrometerService.cs" />
     <Compile Include="Service\InclinometerService.cs" />
+    <Compile Include="Service\JsonService.cs" />
     <Compile Include="Service\LocationService.cs" />
     <Compile Include="Service\MessageBoxService.cs" />
     <Compile Include="Service\NavigationService.cs" />
@@ -116,7 +118,9 @@
     <Compile Include="Service\PingService.cs" />
     <Compile Include="Service\StateService.cs" />
     <Compile Include="Service\StringResourceService.cs" />
+    <Compile Include="Service\WeatherService.cs" />
     <Compile Include="Utils\EnumHelper.cs" />
+    <Compile Include="Utils\UnitConverter.cs" />
     <Compile Include="ViewModel\SimpleViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\VMAccelerometer.cs" />
@@ -125,6 +129,7 @@
     <Compile Include="ViewModel\VMHome.cs" />
     <Compile Include="ViewModel\VMInclinometer.cs" />
     <Compile Include="ViewModel\VMStatus.cs" />
+    <Compile Include="ViewModel\VMWeather.cs" />
     <Compile Include="View\VAccelerometer.xaml.cs">
       <DependentUpon>VAccelerometer.xaml</DependentUpon>
     </Compile>
@@ -148,6 +153,9 @@
     </Compile>
     <Compile Include="View\VSettings.xaml.cs">
       <DependentUpon>VSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VWeather.xaml.cs">
+      <DependentUpon>VWeather.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +195,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\VWeather.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="analytics.xsd">
@@ -223,6 +235,24 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\WeatherIcons\01d.png" />
+    <Content Include="Assets\WeatherIcons\01n.png" />
+    <Content Include="Assets\WeatherIcons\02d.png" />
+    <Content Include="Assets\WeatherIcons\02n.png" />
+    <Content Include="Assets\WeatherIcons\03d.png" />
+    <Content Include="Assets\WeatherIcons\03n.png" />
+    <Content Include="Assets\WeatherIcons\04d.png" />
+    <Content Include="Assets\WeatherIcons\04n.png" />
+    <Content Include="Assets\WeatherIcons\09d.png" />
+    <Content Include="Assets\WeatherIcons\09n.png" />
+    <Content Include="Assets\WeatherIcons\10d.png" />
+    <Content Include="Assets\WeatherIcons\10n.png" />
+    <Content Include="Assets\WeatherIcons\11d.png" />
+    <Content Include="Assets\WeatherIcons\11n.png" />
+    <Content Include="Assets\WeatherIcons\13d.png" />
+    <Content Include="Assets\WeatherIcons\13n.png" />
+    <Content Include="Assets\WeatherIcons\sr.png" />
+    <Content Include="Assets\WeatherIcons\ss.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

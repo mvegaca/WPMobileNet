@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Windows.Devices.Geolocation;
+using WPMobileNet.Model;
 using WPMobileNet.Service;
 using WPMobileNet.Utils;
 
@@ -16,8 +17,6 @@ namespace WPMobileNet.ViewModel
 {
     public class VMHome : VMBase
     {
-
-
         #region Services
         private readonly PingService _pingService;
         private readonly NetworkStatusService _networkStatusService;
@@ -37,6 +36,7 @@ namespace WPMobileNet.ViewModel
             get { return _isProgressIndicatorVisible; }
             set { Set("IsProgressIndicatorVisible", ref _isProgressIndicatorVisible, value); }
         }
+        
         #endregion
 
         #region Constructors
@@ -47,8 +47,8 @@ namespace WPMobileNet.ViewModel
             this._networkStatusService = networkStatusService;
             this._deviceService = deviceService;
             this._locationService = locationService;
-            this._locationService.PositionChanged += _locationService_PositionChanged;
-            this._locationService.StatusChanged += _locationService_StatusChanged;
+            this._locationService.PositionChanged += PositionChanged;
+            this._locationService.StatusChanged += StatusChanged;
         }
         #endregion
 
@@ -77,6 +77,8 @@ namespace WPMobileNet.ViewModel
             this.GetNetworkData();
             this.IsProgressIndicatorVisible = false;
         }
+
+
         private async void GetNetworkData()
         {
             try
@@ -121,7 +123,7 @@ namespace WPMobileNet.ViewModel
         #endregion
 
         #region Events
-        private void _locationService_PositionChanged(object sender, Geoposition geoposition)
+        private void PositionChanged(object sender, Geoposition geoposition)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -149,7 +151,7 @@ namespace WPMobileNet.ViewModel
                 }
             });
         }
-        private void _locationService_StatusChanged(object sender, string e)
+        private void StatusChanged(object sender, string e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -171,7 +173,7 @@ namespace WPMobileNet.ViewModel
                     this.Status.Model.State = string.Empty;
                     this.Status.Model.Country = string.Empty;
                     this.Status.Model.PostalCode = string.Empty;
-                }                
+                }
             });
         }
         #endregion

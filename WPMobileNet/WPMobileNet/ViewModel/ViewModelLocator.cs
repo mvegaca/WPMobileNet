@@ -51,6 +51,7 @@ namespace WPMobileNet.ViewModel
             SimpleIoc.Default.Register<GyrometerService>();
             SimpleIoc.Default.Register<InclinometerService>();
             SimpleIoc.Default.Register<StringResourceService>();
+            SimpleIoc.Default.Register<WeatherService>();
             SimpleIoc.Default.Register<NavigationService>(() => new NavigationService(App.RootFrame)
             {
                 RoutingTable = new Dictionary<string, object>()
@@ -62,7 +63,8 @@ namespace WPMobileNet.ViewModel
                     {"VScreen", new Uri("/View/VScreen.xaml", UriKind.Relative)},
                     {"VGyrometer", new Uri("/View/VGyrometer.xaml", UriKind.Relative)},
                     {"VSettings", new Uri("/View/VSettings.xaml", UriKind.Relative)},
-                    {"VInclinometer", new Uri("/View/VInclinometer.xaml", UriKind.Relative)}
+                    {"VInclinometer", new Uri("/View/VInclinometer.xaml", UriKind.Relative)},
+                    {"VWeather", new Uri("/View/VWeather.xaml", UriKind.Relative)}
                 }
             });
             //ViewModels
@@ -70,6 +72,7 @@ namespace WPMobileNet.ViewModel
             SimpleIoc.Default.Register<VMAccelerometer>();
             SimpleIoc.Default.Register<VMGyrometer>();
             SimpleIoc.Default.Register<VMInclinometer>();
+            SimpleIoc.Default.Register<VMWeather>();
         }
 
         /// <summary>
@@ -125,6 +128,20 @@ namespace WPMobileNet.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<VMInclinometer>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public VMWeather Weather
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VMWeather>();
             }
         }
 

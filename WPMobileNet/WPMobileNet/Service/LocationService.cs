@@ -58,7 +58,7 @@ namespace WPMobileNet.Service
                         _hasPermission = false;
                     }
                     _stateService.SetState(SKLocationPermission, _hasPermission, true);
-                }                
+                }
                 return _hasPermission;
             }
             set
@@ -68,6 +68,8 @@ namespace WPMobileNet.Service
                 CheckPermission();
             }
         }
+        public double? Latitude { get; private set; }
+        public double? Longitude { get; private set; }
         #endregion
 
         #region Events
@@ -75,6 +77,8 @@ namespace WPMobileNet.Service
         public event EventHandler<string> StatusChanged;
         private void _geolocatorPositionChanged(Windows.Devices.Geolocation.Geolocator sender, PositionChangedEventArgs args)
         {
+            this.Latitude = args.Position.Coordinate.Latitude;
+            this.Longitude = args.Position.Coordinate.Longitude;
             if (PositionChanged != null) PositionChanged(this.Geolocator, args.Position);
         }
         private void _geolocator_StatusChanged(Windows.Devices.Geolocation.Geolocator sender, StatusChangedEventArgs args)

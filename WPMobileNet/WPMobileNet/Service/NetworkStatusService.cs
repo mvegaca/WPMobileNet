@@ -1,5 +1,7 @@
 ﻿using Microsoft.Phone.Net.NetworkInformation;
+using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using WPMobileNet.Exception;
 
@@ -42,15 +44,15 @@ namespace WPMobileNet.Service
         {
             this._networkInterfaceInfo = await GetNetworkInterfaceInfo();
             if (_networkInterfaceInfo == null) throw new NetworkInterfaceInfoException();
-        }       
+        }
         internal MobileDataTechnology GetMobileDataTechnology()
         {
             switch (_networkInterfaceInfo.InterfaceSubtype)
             {
-                case NetworkInterfaceSubType.Cellular_1XRTT: return MobileDataTechnology.Technology2G;                
+                case NetworkInterfaceSubType.Cellular_1XRTT: return MobileDataTechnology.Technology2G;
                 case NetworkInterfaceSubType.Cellular_EDGE: return MobileDataTechnology.Technology2G;
                 case NetworkInterfaceSubType.Cellular_GPRS: return MobileDataTechnology.Technology2G;
-                case NetworkInterfaceSubType.Cellular_3G: return MobileDataTechnology.Technology3G;                
+                case NetworkInterfaceSubType.Cellular_3G: return MobileDataTechnology.Technology3G;
                 case NetworkInterfaceSubType.Cellular_EVDO: return MobileDataTechnology.Technology3G;
                 case NetworkInterfaceSubType.Cellular_EVDV: return MobileDataTechnology.Technology3G;
                 case NetworkInterfaceSubType.Cellular_HSPA: return MobileDataTechnology.Technology3G;
@@ -67,6 +69,18 @@ namespace WPMobileNet.Service
         internal bool GetIsCellularDataEnabled() { return DeviceNetworkInformation.IsCellularDataEnabled; }
         internal bool GetIsCellularDataRoamingEnabled() { return DeviceNetworkInformation.IsCellularDataRoamingEnabled; }
         internal bool GetIsNetworkAvailable() { return DeviceNetworkInformation.IsNetworkAvailable; }
+        internal Task<string> DownloadAsync(Uri service)
+        {
+            TaskCompletionSource<string> dtcs = new TaskCompletionSource<string>();
+            WebClient wc = new WebClient();
+            wc.DownloadStringCompleted += ((sender, e) =>
+            {
+                if (e.Error == null) dtcs.SetResult(e.Result);
+                else dtcs.SetException(e.Error);
+            });
+            wc.DownloadStringAsync(service);
+            return dtcs.Task;
+        }
         #endregion
     }
 }

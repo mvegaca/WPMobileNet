@@ -312,7 +312,7 @@
     <value>App code</value>
   </data>
   <data name="VInformationAppVersion" xml:space="preserve">
-    <value>1.0.1.0</value>
+    <value>1.0.2.0</value>
   </data>
   <data name="VInformationAppVersionTitle" xml:space="preserve">
     <value>App version</value>
@@ -372,7 +372,7 @@
     <value>Location</value>
   </data>
   <data name="VSettingsLocationDescription" xml:space="preserve">
-    <value>WPMobileNet will use locations services to show device GPS information in the home page.</value>
+    <value>WPMobileNet will use locations services to show device GPS and weather information.</value>
   </data>
   <data name="VHomeAppBarIcon2" xml:space="preserve">
     <value>settings</value>
@@ -400,5 +400,47 @@
   </data>
   <data name="VInclinometerDescription" xml:space="preserve">
     <value>Inclinometer sensor measure X, Y, and Z axis inclination in degrees.</value>
+  </data>
+  <data name="VHomeSensorsItemHeader6" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="VHomeSensorsItemLabel6" xml:space="preserve">
+    <value>Get your current location weather information.</value>
+  </data>
+  <data name="StatusWeatherCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="StatusWeatherHumidity" xml:space="preserve">
+    <value>Humidity</value>
+  </data>
+  <data name="StatusWeatherMain" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="StatusWeatherName" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="StatusWeatherPressure" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="StatusWeatherTemperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="StatusWeatherTemperatureMax" xml:space="preserve">
+    <value>Temperature max</value>
+  </data>
+  <data name="StatusWeatherTemperatureMin" xml:space="preserve">
+    <value>Temperature min</value>
+  </data>
+  <data name="StatusWeatherWindSpeed" xml:space="preserve">
+    <value>Wind speed</value>
+  </data>
+  <data name="VWeatherDescription" xml:space="preserve">
+    <value>Weather information based on you current location.</value>
+  </data>
+  <data name="StatusSunrise" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="StatusSunset" xml:space="preserve">
+    <value>Sunset</value>
   </data>
 </root>

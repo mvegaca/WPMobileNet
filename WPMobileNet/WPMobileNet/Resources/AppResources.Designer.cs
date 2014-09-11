@@ -538,11 +538,110 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sunrise.
+        /// </summary>
+        public static string StatusSunrise {
+            get {
+                return ResourceManager.GetString("StatusSunrise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunset.
+        /// </summary>
+        public static string StatusSunset {
+            get {
+                return ResourceManager.GetString("StatusSunset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vertical Dilution Of Precision.
         /// </summary>
         public static string StatusVerticalDilutionOfPrecision {
             get {
                 return ResourceManager.GetString("StatusVerticalDilutionOfPrecision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string StatusWeatherCountry {
+            get {
+                return ResourceManager.GetString("StatusWeatherCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humidity.
+        /// </summary>
+        public static string StatusWeatherHumidity {
+            get {
+                return ResourceManager.GetString("StatusWeatherHumidity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weather.
+        /// </summary>
+        public static string StatusWeatherMain {
+            get {
+                return ResourceManager.GetString("StatusWeatherMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string StatusWeatherName {
+            get {
+                return ResourceManager.GetString("StatusWeatherName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure.
+        /// </summary>
+        public static string StatusWeatherPressure {
+            get {
+                return ResourceManager.GetString("StatusWeatherPressure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string StatusWeatherTemperature {
+            get {
+                return ResourceManager.GetString("StatusWeatherTemperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature max.
+        /// </summary>
+        public static string StatusWeatherTemperatureMax {
+            get {
+                return ResourceManager.GetString("StatusWeatherTemperatureMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature min.
+        /// </summary>
+        public static string StatusWeatherTemperatureMin {
+            get {
+                return ResourceManager.GetString("StatusWeatherTemperatureMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wind speed.
+        /// </summary>
+        public static string StatusWeatherWindSpeed {
+            get {
+                return ResourceManager.GetString("StatusWeatherWindSpeed", resourceCulture);
             }
         }
         
@@ -718,6 +817,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Weather.
+        /// </summary>
+        public static string VHomeSensorsItemHeader6 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemHeader6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get X, Y, and Z axis acceleration..
         /// </summary>
         public static string VHomeSensorsItemLabel1 {
@@ -763,6 +871,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get your current location weather information..
+        /// </summary>
+        public static string VHomeSensorsItemLabel6 {
+            get {
+                return ResourceManager.GetString("VHomeSensorsItemLabel6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inclinometer sensor measure X, Y, and Z axis inclination in degrees..
         /// </summary>
         public static string VInclinometerDescription {
@@ -790,7 +907,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.1.0.
+        ///   Looks up a localized string similar to 1.0.2.0.
         /// </summary>
         public static string VInformationAppVersion {
             get {
@@ -889,7 +1006,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WPMobileNet will use locations services to show device GPS information in the home page..
+        ///   Looks up a localized string similar to WPMobileNet will use locations services to show device GPS and weather information..
         /// </summary>
         public static string VSettingsLocationDescription {
             get {
@@ -903,6 +1020,15 @@ namespace WPMobileNet.Resources {
         public static string VSettingsTitle {
             get {
                 return ResourceManager.GetString("VSettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weather information based on you current location..
+        /// </summary>
+        public static string VWeatherDescription {
+            get {
+                return ResourceManager.GetString("VWeatherDescription", resourceCulture);
             }
         }
     }
