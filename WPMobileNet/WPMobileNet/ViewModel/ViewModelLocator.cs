@@ -64,7 +64,8 @@ namespace WPMobileNet.ViewModel
                     {"VGyrometer", new Uri("/View/VGyrometer.xaml", UriKind.Relative)},
                     {"VSettings", new Uri("/View/VSettings.xaml", UriKind.Relative)},
                     {"VInclinometer", new Uri("/View/VInclinometer.xaml", UriKind.Relative)},
-                    {"VWeather", new Uri("/View/VWeather.xaml", UriKind.Relative)}
+                    {"VWeather", new Uri("/View/VWeather.xaml", UriKind.Relative)},
+                    {"VMap", new Uri("/View/VMap.xaml", UriKind.Relative)}
                 }
             });
             //ViewModels

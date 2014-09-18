@@ -19,7 +19,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>WPMobileNet_Release_x86_1.0.2.0.xap</XapFilename>
+    <XapFilename>WPMobileNet_Release_x86_1.0.3.0.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>WPMobileNet.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -119,6 +119,7 @@
     <Compile Include="Service\StateService.cs" />
     <Compile Include="Service\StringResourceService.cs" />
     <Compile Include="Service\WeatherService.cs" />
+    <Compile Include="Utils\ConfigurationHelper.cs" />
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="Utils\UnitConverter.cs" />
     <Compile Include="ViewModel\SimpleViewModelBase.cs" />
@@ -144,6 +145,9 @@
     </Compile>
     <Compile Include="View\VInformation.xaml.cs">
       <DependentUpon>VInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VMap.xaml.cs">
+      <DependentUpon>VMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\VPedometer.xaml.cs">
       <DependentUpon>VPedometer.xaml</DependentUpon>
@@ -183,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\VMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\VPedometer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +221,7 @@
   <ItemGroup>
     <Content Include="analytics.xml" />
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBarIcons\circle.png" />
     <Content Include="Assets\AppBarIcons\questionmark.png" />
     <Content Include="Assets\AppBarIcons\settings.png" />
     <Content Include="Assets\ApplicationIcon.png">

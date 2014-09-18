@@ -718,6 +718,15 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to view on map.
+        /// </summary>
+        public static string VHomeButtonViewOnMap {
+            get {
+                return ResourceManager.GetString("VHomeButtonViewOnMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Device.
         /// </summary>
         public static string VHomePivotItemHeader0 {
@@ -907,7 +916,7 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.2.0.
+        ///   Looks up a localized string similar to 1.0.3.0.
         /// </summary>
         public static string VInformationAppVersion {
             get {
@@ -975,6 +984,15 @@ namespace WPMobileNet.Resources {
         public static string VInformationTitle {
             get {
                 return ResourceManager.GetString("VInformationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string VMapMe {
+            get {
+                return ResourceManager.GetString("VMapMe", resourceCulture);
             }
         }
         

@@ -1,12 +1,18 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Maps;
+using Microsoft.Phone.Maps.Controls;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup;
+using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 using Windows.Devices.Geolocation;
 using WPMobileNet.Model;
@@ -37,6 +43,16 @@ namespace WPMobileNet.ViewModel
             set { Set("IsProgressIndicatorVisible", ref _isProgressIndicatorVisible, value); }
         }
         
+        public GeoCoordinate Me
+        {
+            get
+            {
+                var lat = this.Status.Model.Latitude;
+                var lon = this.Status.Model.Longitude;
+                if (lat != null && lon != null) return new GeoCoordinate(lat.Value, lon.Value);
+                else return null;
+            }
+        }
         #endregion
 
         #region Constructors
@@ -77,8 +93,6 @@ namespace WPMobileNet.ViewModel
             this.GetNetworkData();
             this.IsProgressIndicatorVisible = false;
         }
-
-
         private async void GetNetworkData()
         {
             try
@@ -119,7 +133,7 @@ namespace WPMobileNet.ViewModel
             catch (System.Exception)
             {
             }
-        }
+        }           
         #endregion
 
         #region Events

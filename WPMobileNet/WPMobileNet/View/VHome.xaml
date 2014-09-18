@@ -26,8 +26,6 @@
             <command:CommandAction Command="{Binding GetStatusCommand}"/>
         </ia:EventTrigger>
     </ia:Interaction.Triggers>
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="0" Margin="0">
@@ -96,7 +94,14 @@
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocation, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle2Style}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusDeviceLocationDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusPositionStatus, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding Status.Model.PositionStatus}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
+                            <HyperlinkButton
+                                Content="{Binding Path=LocalizedResources.VHomeButtonViewOnMap, Source={StaticResource LocalizedStrings}}"
+                                HorizontalAlignment="Left"                        
+                                FontSize="22"
+                                Margin="-12,6,0,0"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="VMap"/>
+                            <TextBlock Text="{Binding Status.Model.PositionStatus}" Style="{StaticResource PhoneTextBlockBase}" Margin="0,6,0,0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitudeAccuracy, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Status.Model.AltitudeAccuracy}" Style="{StaticResource PhoneTextBlockBase}" Margin="0"/>
                             <TextBlock Text="{Binding Path=LocalizedResources.StatusAltitude, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" TextWrapping="Wrap"/>
@@ -209,14 +214,5 @@
                 </phone:PivotItem>                
             </phone:Pivot>
         </Grid>
-    </Grid>
-    <!--<i:Interaction.Behaviors>                
-        <cimbalino:ApplicationBarBehavior ForegroundColor="{StaticResource PhoneBackgroundColor}" BackgroundColor="{StaticResource PhoneContrastBackgroundColor}" Mode="Minimized">
-            <cimbalino:ApplicationBarIconButton                
-                Text="{Binding Path=LocalizedResources.VHomeAppBarIcon1, Source={StaticResource LocalizedStrings}}"
-                IconUri="/Assets/AppBarIcons/questionmark.png"
-                Command="{Binding NavigateCommand}"
-                CommandParameter="VInformation"/>
-        </cimbalino:ApplicationBarBehavior>
-    </i:Interaction.Behaviors>-->
+    </Grid>    
 </phone:PhoneApplicationPage>

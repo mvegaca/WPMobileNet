@@ -312,7 +312,7 @@
     <value>App code</value>
   </data>
   <data name="VInformationAppVersion" xml:space="preserve">
-    <value>1.0.2.0</value>
+    <value>1.0.3.0</value>
   </data>
   <data name="VInformationAppVersionTitle" xml:space="preserve">
     <value>App version</value>
@@ -442,5 +442,11 @@
   </data>
   <data name="StatusSunset" xml:space="preserve">
     <value>Sunset</value>
+  </data>
+  <data name="VHomeButtonViewOnMap" xml:space="preserve">
+    <value>view on map</value>
+  </data>
+  <data name="VMapMe" xml:space="preserve">
+    <value />
   </data>
 </root>
