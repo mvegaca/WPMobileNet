@@ -14,16 +14,6 @@ namespace WPMobileNet.View
 {
     public partial class VHome : PhoneApplicationPage
     {
-        private StringResourceService _stringResourceService;
-        public StringResourceService StringResourceService
-        {
-            get
-            {
-                if (_stringResourceService == null) _stringResourceService = ServiceLocator.Current.GetInstance<StringResourceService>();
-                return _stringResourceService;
-            }
-        }
-
         public VHome()
         {
             InitializeComponent();

@@ -44,13 +44,11 @@ namespace WPMobileNet.ViewModel
             SimpleIoc.Default.Register<PingService>();
             SimpleIoc.Default.Register<NetworkStatusService>();
             SimpleIoc.Default.Register<DeviceService>();
-            SimpleIoc.Default.Register<MessageBoxService>();
             SimpleIoc.Default.Register<StateService>();
             SimpleIoc.Default.Register<LocationService>();
             SimpleIoc.Default.Register<AccelerometerService>();
             SimpleIoc.Default.Register<GyrometerService>();
             SimpleIoc.Default.Register<InclinometerService>();
-            SimpleIoc.Default.Register<StringResourceService>();
             SimpleIoc.Default.Register<WeatherService>();
             SimpleIoc.Default.Register<NavigationService>(() => new NavigationService(App.RootFrame)
             {

@@ -18,6 +18,12 @@ namespace WPMobileNet.Service
             : base()
         {
             _sensor = Inclinometer.GetDefault();
+            if (_sensor == null)
+            {
+                var title = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundTitle);
+                var message = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundMessage);
+                MessageBoxService.Show(title, message, MessageBoxService.MessageButtonType.Ok);
+            }
         }
         #endregion
 
@@ -32,12 +38,18 @@ namespace WPMobileNet.Service
         #region Methods
         internal void Start()
         {
-            this._sensor.ReadingChanged += InclinometerReadingChanged;
+            if (_sensor != null)
+            {
+                this._sensor.ReadingChanged += InclinometerReadingChanged;
+            }            
         }
 
         internal void Stop()
         {
-            this._sensor.ReadingChanged -= InclinometerReadingChanged;
+            if (_sensor != null)
+            {
+                this._sensor.ReadingChanged -= InclinometerReadingChanged;
+            }
         }
         #endregion
     }

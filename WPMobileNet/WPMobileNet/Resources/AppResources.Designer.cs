@@ -106,6 +106,24 @@ namespace WPMobileNet.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This device doesn&apos;t have this sensor available..
+        /// </summary>
+        public static string SensorNotFoundMessage {
+            get {
+                return ResourceManager.GetString("SensorNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sensor not found.
+        /// </summary>
+        public static string SensorNotFoundTitle {
+            get {
+                return ResourceManager.GetString("SensorNotFoundTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acceleration X.
         /// </summary>
         public static string StatusAccelerationX {

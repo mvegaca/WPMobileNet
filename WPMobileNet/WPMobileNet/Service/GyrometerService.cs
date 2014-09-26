@@ -10,13 +10,20 @@ namespace WPMobileNet.Service
     public class GyrometerService : BaseService
     {
         #region Properties
-        private readonly Gyrometer _sensor;        
+        private readonly Gyrometer _sensor;
         #endregion
 
         #region Constructors
-        public GyrometerService() : base()
+        public GyrometerService()
+            : base()
         {
             _sensor = Gyrometer.GetDefault();
+            if (_sensor == null)
+            {
+                var title = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundTitle);
+                var message = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundMessage);
+                MessageBoxService.Show(title, message, MessageBoxService.MessageButtonType.Ok);
+            }
         }
         #endregion
 
@@ -31,12 +38,12 @@ namespace WPMobileNet.Service
         #region Methods
         internal void Start()
         {
-            this._sensor.ReadingChanged += GyrometerReadingChanged;
+            if (_sensor != null) this._sensor.ReadingChanged += GyrometerReadingChanged;
         }
 
         internal void Stop()
         {
-            this._sensor.ReadingChanged -= GyrometerReadingChanged;
+            if (_sensor != null) this._sensor.ReadingChanged -= GyrometerReadingChanged;
         }
         #endregion
     }

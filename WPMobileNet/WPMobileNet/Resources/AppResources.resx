@@ -449,4 +449,10 @@
   <data name="VMapMe" xml:space="preserve">
     <value />
   </data>
+  <data name="SensorNotFoundMessage" xml:space="preserve">
+    <value>This device doesn't have this sensor available.</value>
+  </data>
+  <data name="SensorNotFoundTitle" xml:space="preserve">
+    <value>Sensor not found</value>
+  </data>
 </root>

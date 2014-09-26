@@ -13,7 +13,7 @@ namespace WPMobileNet.Service
         #region Constants
         private const float MAGNETIC_FIELD_EARTH_MAX = 30.0f;
         private const float STANDARD_GRAVITY = 9.80665f;
-        
+
         private const int WALKING_DELTA = 60000;
         private const int ACTION_EVAL_TIMER = 30000;
         #endregion
@@ -42,6 +42,12 @@ namespace WPMobileNet.Service
         public AccelerometerService()
         {
             this._sensor = Accelerometer.GetDefault();
+            if (_sensor == null)
+            {
+                var title = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundTitle);
+                var message = StringResourceService.GetResource(StringResourceService.ResourceKeys.SensorNotFoundMessage);
+                MessageBoxService.Show(title, message, MessageBoxService.MessageButtonType.Ok);
+            }
             int h = 480;
             mYOffset = h * 0.5f;
             mScale[0] = -(h * 0.5f * (1.0f / (STANDARD_GRAVITY * 2)));
@@ -91,7 +97,7 @@ namespace WPMobileNet.Service
                         // Step detected, wakeup
                         TimeSpan ts = DateTime.Now - lasStepStamp;
                         if (ts.TotalMilliseconds > 1500) stepsInaRow = 0;
-                        
+
                         stepsInaRow++;
                         if (SteepDetected != null) SteepDetected(null, EventArgs.Empty);
                         // Si el delta es demasiado grande, hay mas de 3
@@ -129,13 +135,13 @@ namespace WPMobileNet.Service
                             }
                             // stepsInaRow = 0;
                             this.isWalking = true;
-                            if (PedometerStatusChanged != null) PedometerStatusChanged(null, EnumHelper.PedometerStatus.Walking);                            
+                            if (PedometerStatusChanged != null) PedometerStatusChanged(null, EnumHelper.PedometerStatus.Walking);
                         }
                         else
                         {
                             // Si ya estamos caminando y está marcado
-							// revisemos que el timer no se descontrola
-							// por falta de GPS...
+                            // revisemos que el timer no se descontrola
+                            // por falta de GPS...
                             if (stepsInaRow > 3 && this.isWalking)
                             {
                                 if (deltaTimer > WALKING_DELTA * 2)
@@ -159,7 +165,7 @@ namespace WPMobileNet.Service
             }
             mLastDirections = direction;
             mLastValues = v;
-            TimeSpan ts2 = DateTime.Now - lasStepStamp;            
+            TimeSpan ts2 = DateTime.Now - lasStepStamp;
             if (ts2.TotalMilliseconds > (ACTION_EVAL_TIMER * 2) && isWalking)
             {
                 // mas de 5 seg sin pasos detectados =
@@ -170,11 +176,11 @@ namespace WPMobileNet.Service
         }
         internal void Start()
         {
-            this._sensor.ReadingChanged += _sensor_ReadingChanged;
+            if (this._sensor != null) this._sensor.ReadingChanged += _sensor_ReadingChanged;
         }
         internal void Stop()
         {
-            this._sensor.ReadingChanged -= _sensor_ReadingChanged;
+            if (this._sensor != null) this._sensor.ReadingChanged -= _sensor_ReadingChanged;
         }
         #endregion
 

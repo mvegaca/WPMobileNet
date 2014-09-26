@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace WPMobileNet.Service
 {
-    public class MessageBoxService
+    public static class MessageBoxService
     {
         internal enum MessageButtonType
         {
@@ -12,8 +12,8 @@ namespace WPMobileNet.Service
             YesNo
         }
 
-        internal MessageBoxResult Show(string message) { return this.Show(string.Empty, message, MessageButtonType.Ok); }
-        internal MessageBoxResult Show(string title, string message, MessageButtonType messageButtonType)
+        internal static MessageBoxResult Show(string message) { return Show(string.Empty, message, MessageButtonType.Ok); }
+        internal static MessageBoxResult Show(string title, string message, MessageButtonType messageButtonType)
         {
             switch (messageButtonType)
             {
@@ -28,7 +28,7 @@ namespace WPMobileNet.Service
             }
         }
 
-        internal bool Ask(string title, string message, MessageButtonType messageButtonType)
+        internal static bool Ask(string title, string message, MessageButtonType messageButtonType)
         {
             MessageBoxResult result;
             switch (messageButtonType)
@@ -48,7 +48,6 @@ namespace WPMobileNet.Service
             }
             if (result.Equals(MessageBoxResult.OK) || result.Equals(MessageBoxResult.Yes)) return true;
             else return false;
-        }
-        public MessageBoxService() { }
+        }        
     }
 }

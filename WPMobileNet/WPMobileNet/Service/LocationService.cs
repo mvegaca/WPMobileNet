@@ -17,7 +17,6 @@ namespace WPMobileNet.Service
         #endregion
 
         #region Services
-        private readonly MessageBoxService _messageBoxService;
         private readonly StateService _stateService;
         #endregion
 
@@ -46,7 +45,7 @@ namespace WPMobileNet.Service
                 if (_hasPermission == null) _hasPermission = _stateService.GetState<bool?>(SKLocationPermission, true);
                 if (_hasPermission == null)
                 {
-                    var result = _messageBoxService.Show(AskLocationPermissionTitle, AskLocationPermissionMessage, MessageBoxService.MessageButtonType.YesNo);
+                    var result = MessageBoxService.Show(AskLocationPermissionTitle, AskLocationPermissionMessage, MessageBoxService.MessageButtonType.YesNo);
                     if (result.Equals(MessageBoxResult.OK))
                     {
                         AnalyticsService.SendEvent(AnalyticsService.EventCategory.Actions, AnalyticsService.EventAction.AcceptAccessLocation);
@@ -88,9 +87,8 @@ namespace WPMobileNet.Service
         #endregion
 
         #region Constructors
-        public LocationService(MessageBoxService messageBoxService, StateService stateService)
+        public LocationService(StateService stateService)
         {
-            this._messageBoxService = messageBoxService;
             this._stateService = stateService;
             CheckPermission();
         }
